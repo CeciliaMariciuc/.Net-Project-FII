@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{D8D965AE-5053-415B-8ECD-F22F74BBD062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Microservice", "MovieCatalog.Microservice\MovieCatalog.Microservice.csproj", "{60E5079A-AA56-43AE-A185-CE2C54EB57E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.WebApi", "Gateway.WebApi\Gateway.WebApi.csproj", "{D486CC9D-08CC-4F89-8182-516CC44942B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60E5079A-AA56-43AE-A185-CE2C54EB57E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E5079A-AA56-43AE-A185-CE2C54EB57E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E5079A-AA56-43AE-A185-CE2C54EB57E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E5079A-AA56-43AE-A185-CE2C54EB57E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60E5079A-AA56-43AE-A185-CE2C54EB57E5} = {D8D965AE-5053-415B-8ECD-F22F74BBD062}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {011758A0-C883-452F-AD99-1B98AB45AC0C}
+	EndGlobalSection
+EndGlobal
