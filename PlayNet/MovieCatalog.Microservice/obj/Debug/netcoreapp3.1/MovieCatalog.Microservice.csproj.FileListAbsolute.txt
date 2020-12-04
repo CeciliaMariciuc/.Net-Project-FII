@@ -29,3 +29,34 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\Back-end\PlayNet\MovieCatalog
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\Back-end\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\Back-end\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\Back-end\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.csproj.CopyComplete
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\appsettings.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.exe
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.deps.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.runtimeconfig.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.runtimeconfig.dev.json
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MovieCatalog.Microservice.pdb
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\MongoDB.LibMongocrypt.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.csprojAssemblyReference.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.AssemblyInfoInputs.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.AssemblyInfo.cs
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.csproj.CoreCompileInputs.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.MvcApplicationPartsAssemblyInfo.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.RazorTargetAssemblyInfo.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.csproj.CopyComplete
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\staticwebassets\MovieCatalog.Microservice.StaticWebAssets.Manifest.cache
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\staticwebassets\MovieCatalog.Microservice.StaticWebAssets.xml
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.dll
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.pdb
+D:\SEM 1 Anul 3\[.NET] - Introducere in .NET\.Net-Project-FII\PlayNet\MovieCatalog.Microservice\obj\Debug\netcoreapp3.1\MovieCatalog.Microservice.genruntimeconfig.cache

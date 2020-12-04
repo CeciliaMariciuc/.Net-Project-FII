@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj": {}
+    "D:\\SEM 1 Anul 3\\[.NET] - Introducere in .NET\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj": {
+    "D:\\SEM 1 Anul 3\\[.NET] - Introducere in .NET\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
+        "projectUniqueName": "D:\\SEM 1 Anul 3\\[.NET] - Introducere in .NET\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
         "projectName": "MovieCatalog.Microservice",
-        "projectPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
-        "packagesPath": "C:\\Users\\cecil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\obj\\",
+        "projectPath": "D:\\SEM 1 Anul 3\\[.NET] - Introducere in .NET\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
+        "packagesPath": "C:\\Users\\adama\\.nuget\\packages\\",
+        "outputPath": "D:\\SEM 1 Anul 3\\[.NET] - Introducere in .NET\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\cecil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\adama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

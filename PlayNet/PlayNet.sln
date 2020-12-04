@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{D8D965AE-5053-415B-8ECD-F22F74BBD062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Microservice", "MovieCatalog.Microservice\MovieCatalog.Microservice.csproj", "{60E5079A-AA56-43AE-A185-CE2C54EB57E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCatalog.Microservice", "MovieCatalog.Microservice\MovieCatalog.Microservice.csproj", "{60E5079A-AA56-43AE-A185-CE2C54EB57E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.WebApi", "Gateway.WebApi\Gateway.WebApi.csproj", "{D486CC9D-08CC-4F89-8182-516CC44942B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.WebApi", "Gateway.WebApi\Gateway.WebApi.csproj", "{D486CC9D-08CC-4F89-8182-516CC44942B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{87495DC3-6BA9-47F2-BFCE-B1C8652A5BFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsUnitTesting", "MsUnitTesting\MsUnitTesting.csproj", "{1EF0EDE3-80CA-406F-AF23-5556D2C2D9B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D486CC9D-08CC-4F89-8182-516CC44942B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87495DC3-6BA9-47F2-BFCE-B1C8652A5BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87495DC3-6BA9-47F2-BFCE-B1C8652A5BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87495DC3-6BA9-47F2-BFCE-B1C8652A5BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87495DC3-6BA9-47F2-BFCE-B1C8652A5BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF0EDE3-80CA-406F-AF23-5556D2C2D9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF0EDE3-80CA-406F-AF23-5556D2C2D9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF0EDE3-80CA-406F-AF23-5556D2C2D9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF0EDE3-80CA-406F-AF23-5556D2C2D9B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
