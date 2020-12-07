@@ -19,7 +19,7 @@ namespace Rating.Microservice.Controllers
         }
 
         [HttpGet("movie/{movieId}")]
-        public async Task<IEnumerable<RatingEntry>> GetByMovieId(int movieId)
+        public async Task<IEnumerable<RatingEntry>> GetByMovieId(string movieId)
             {
             return await _repository.GetByMovieId(movieId);
         }
@@ -31,7 +31,7 @@ namespace Rating.Microservice.Controllers
 
 
         [HttpGet("user/{userId}")]
-        public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(int userId)
+        public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(string userId)
         {
             return await _repository.GetRatingsGivenByUser(userId);
             

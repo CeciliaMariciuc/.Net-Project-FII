@@ -7,8 +7,6 @@ namespace MovieCatalog.Microservice.Model
     [BsonIgnoreExtraElements]
     public class Movie
     {
-        internal object x;
-
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
