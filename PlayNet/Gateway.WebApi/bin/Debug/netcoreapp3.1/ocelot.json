@@ -1,5 +1,6 @@
 {
   "Routes": [
+    //Routes for MovieCatalog
     {
       "DownstreamPathTemplate": "/movies",
       "DownstreamScheme": "https",
@@ -50,7 +51,78 @@
       ],
       "UpstreamPathTemplate": "/WeatherForecast",
       "UpstreamHttpMethod": [ "GET" ]
+    }, //Routes for Authentication
+    {
+      "DownstreamPathTemplate": "/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44304"
+        }
+      ],
+      "UpstreamPathTemplate": "/users",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/users/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44304"
+        }
+      ],
+      "UpstreamPathTemplate": "/users/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    }, //Routes for Rating
+    {
+      "DownstreamPathTemplate": "/rating/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44347"
+        }
+      ],
+      "UpstreamPathTemplate": "/rating/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/rating/movie/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44347"
+        }
+      ],
+      "UpstreamPathTemplate": "/rating/movie/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/rating/user/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44347"
+        }
+      ],
+      "UpstreamPathTemplate": "/rating/user/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/rating",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44347"
+        }
+      ],
+      "UpstreamPathTemplate": "/rating",
+      "UpstreamHttpMethod": [ "POST" ]
     }
-
   ]
 }  
