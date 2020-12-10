@@ -1,0 +1,41 @@
+﻿@page "/movies"
+@inject HttpClient Http
+@using Models
+<h3>MovieCatalog</h3>
+
+<div class="text-center">
+    <p>Here we will only have a guest page.</p>
+
+    <hr />
+
+    @if (_movies.Any())
+    {
+        <div class="movie-list">
+            @foreach (var movie in _movies)
+            {
+                <div class="movie-el">
+                    <div class="card-body">
+                        <h5 class="movie-title">@movie.Title</h5>
+                        <p class="movie-info">
+                            <strong>Description: </strong> @movie.Description
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No Movies Found</p>
+    }
+
+    @functions {
+
+        private List<Movie> _movies = new List<Movie>();
+
+        protected override async Task OnInitializedAsync() => await GetMovies();
+
+        private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies");
+    }
+
+</div>
