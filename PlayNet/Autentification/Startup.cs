@@ -6,6 +6,11 @@ using Microsoft.Extensions.Hosting;
 using Autentification.Data;
 using Autentification.Model;
 using Microsoft.Extensions.Options;
+using Authentication.Microservice.Helpers;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Autentification
 {
@@ -28,12 +33,50 @@ namespace Autentification
                 sp.GetRequiredService<IOptions<UserDatabaseSettings>>().Value);
             
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICryptService, CryptService>();
             services.AddControllers();
-            services.AddSwaggerGen();
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+            var key = Encoding.UTF8.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            })
+            .AddJwtBearer(x =>
+            {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        var userRepository = context.HttpContext.RequestServices.GetRequiredService<IUserRepository>();
+                        var userId = context.Principal.Identity.Name;
+                        var user = userRepository.GetById(userId);
+                        if (user == null)
+                        {
+                            context.Fail("Unauthorized");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
             });
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +94,7 @@ namespace Autentification
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
 
             app.UseRouting();
 
@@ -60,6 +104,7 @@ namespace Autentification
             {
                 endpoints.MapControllers();
             });
+           // app.UseMiddleware<JwtMiddleware>();
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod()
                 .AllowAnyHeader());
         }

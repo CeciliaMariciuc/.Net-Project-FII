@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qhiWzsB1VNJTpJQLXw41lBnjTx3ml6PRMWQ/JvZsj1NzDoswDoNV6+kMGO5WYFV0jIMJPfybH5Pkw08sn/4PwQ==",
+  "dgSpecHash": "KdUyaShwBU83U/PQVu2zrh+5ydoHVpCAuTOQBZd+eS5M3OJSWTHG4ZtuSiLw3cKXD/+3pe/RFc1zu5Jtlb0EEg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cecil\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\cecil\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.3\\microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",

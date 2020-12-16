@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using MovieCatalog.Microservice.Model;
 using System;
 using System.Collections.Generic;
@@ -42,15 +43,19 @@ namespace MovieCatalog.Microservice.Data
 
         }
         
-        public async Task<IEnumerable<Movie>> GetFiltered(string title, string genre)
+        public async Task<IEnumerable<Movie>> GetFiltered(string title, string genre, string sort,int sort_order)
         {
             var filterByTitle = Builders<Movie>.Filter.
                 Where(m => m.Title.ToLower().Contains(title.ToLower()));
             var filterByGenre = Builders<Movie>.Filter.Where(m => m.Genre.Contains(genre));
             var filter = Builders<Movie>.Filter.And(filterByTitle, filterByGenre);
+            /*var sort_field = Builders<Movie>.Sort.Ascending(sort);
+            var sortDefinition = new SortDefinitionBuilder<Movie>().Descending(sort);
+            var findOptions = new FindOptions<Movie>() { Sort = sortDefinition };
+            */
             try
             {
-                return await _context.Movies.Find(filter).ToListAsync();
+                return await _context.Movies.Find(filter).Sort(new BsonDocument(sort, sort_order)).ToListAsync();
             }
             catch (Exception ex)
             {

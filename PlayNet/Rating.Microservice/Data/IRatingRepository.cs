@@ -8,6 +8,7 @@ namespace Rating.Microservice.Data
     { 
         Task <IEnumerable<RatingEntry>> GetByMovieId(string movieId);
         Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(string userId);
+        Task<IEnumerable<PredictionMappedRating>> GetRatingsGivenByUserMap(string userId);
         Task<RatingEntry> GetById(string id);
         Task AddRating(RatingEntry rating);
         Task UpdateRating(string id, RatingEntry rating);

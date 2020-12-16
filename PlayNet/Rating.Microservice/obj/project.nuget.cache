@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oYtuwswr8tSGRV3ZhIEq3MT3FJId0rycthyUloIlEc15ba/Y5HVUbNves29EGQuVE+ZJtyPlb0t2+BkZQ2JglA==",
+  "dgSpecHash": "FmA4Evx3X2xac+T4cpYB8SVdM0JpEOkCAzXRl9SaBbG/Q2Zi46EgqgBvo3vzfK9tODhVsoklR4zl3vtPKriXCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
+  "projectFilePath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cecil\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\cecil\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

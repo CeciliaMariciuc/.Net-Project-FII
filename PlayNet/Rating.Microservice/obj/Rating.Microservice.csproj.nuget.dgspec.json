@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {}
+    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {
+    "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
+        "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
         "projectName": "Rating.Microservice",
-        "projectPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
+        "projectPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
         "packagesPath": "C:\\Users\\cecil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\Rating.Microservice\\obj\\",
+        "outputPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\PlayNet-back\\PlayNet\\Rating.Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

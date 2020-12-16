@@ -4,6 +4,7 @@ using Rating.Microservice.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using RatingService.Microservice.Data;
+using System.Linq;
 
 namespace Rating.Microservice.Data
 {
@@ -43,6 +44,7 @@ namespace Rating.Microservice.Data
             }
 
         }
+
         public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(string userId)
         {
             try
@@ -50,6 +52,23 @@ namespace Rating.Microservice.Data
                 return await _context.Ratings
                                 .Find(rating => rating.UserId == userId)
                                 .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<PredictionMappedRating>> GetRatingsGivenByUserMap(string userId)
+        {
+            try
+            {
+                List<RatingEntry> ratings = await _context.Ratings
+                                .Find(rating => rating.UserId == userId)
+                                .ToListAsync();
+                List<PredictionMappedRating> mappedRatings =
+                    ratings.Select(r => new PredictionMappedRating { MovieTitle = r.MovieTitle, RatingValue = r.Rated }).ToList();
+                return mappedRatings;
             }
             catch (Exception ex)
             {

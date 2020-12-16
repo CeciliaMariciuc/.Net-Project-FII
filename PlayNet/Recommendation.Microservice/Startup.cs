@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.ML;
+using Microsoft.Extensions.Options;
+using Recommendation.Microservice.Data;
+using Recommendation.Microservice.DataModels;
+using Recommendation.Microservice.Helpers;
+using Recommendation.Microservice.Model;
 
 namespace Recommendation.Microservice
 {
@@ -26,6 +25,22 @@ namespace Recommendation.Microservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Configure<RecommendationDatabaseSettings>(
+                Configuration.GetSection(nameof(RecommendationDatabaseSettings)));
+
+            services.AddSingleton<IRecommendationDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<RecommendationDatabaseSettings>>().Value);
+            services.AddTransient<IMovieMapRepository, MovieMapRepository>();
+            services.AddTransient<IRatingRepository, RatingRepository>();
+            services.AddTransient<IPredictionsService, PredictionsService>();
+
+            services.AddPredictionEnginePool<MovieData, MoviePrediction>()
+                .FromFile(modelName: "MovieRecommendation", filePath: "ML.Models/MLModel.zip", watchForChanges: true);
+            services.AddSwaggerGen();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +49,12 @@ namespace Recommendation.Microservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rating API V1");
+                });
             }
 
             app.UseHttpsRedirection();
@@ -46,6 +67,8 @@ namespace Recommendation.Microservice
             {
                 endpoints.MapControllers();
             });
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod()
+                .AllowAnyHeader());
         }
     }
 }

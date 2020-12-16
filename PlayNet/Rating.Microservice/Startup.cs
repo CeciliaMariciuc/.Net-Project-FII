@@ -31,10 +31,6 @@ namespace Rating.Microservice
             services.AddTransient<IRatingRepository, RatingRepository>();
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,8 +57,6 @@ namespace Rating.Microservice
             {
                 endpoints.MapControllers();
             });
-            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod()
-                .AllowAnyHeader());
         }
     }
 }
