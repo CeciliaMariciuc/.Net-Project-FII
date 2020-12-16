@@ -2,7 +2,7 @@
   "Routes": [
     //Routes for MovieCatalog
     {
-      "DownstreamPathTemplate": "/movies",
+      "DownstreamPathTemplate": "/api/v1/movies",
       "DownstreamScheme": "https",
       "DownstreamHostandPorts": [
         {
@@ -14,7 +14,7 @@
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/movies/{id}",
+      "DownstreamPathTemplate": "/api/v1/movies/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -26,7 +26,7 @@
       "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ]
     },
     {
-      "DownstreamPathTemplate": "/movies/query",
+      "DownstreamPathTemplate": "/api/v1/movies/query",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -36,24 +36,9 @@
       ],
       "UpstreamPathTemplate": "/movies/query",
       "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/WeatherForecast",
-      "DownstreamScheme": "https",
-      "DownstreamHostandPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44301"
-        }
-        //{
-        //  "Host": "appservice2.azurewebsites.net"
-        //}
-      ],
-      "UpstreamPathTemplate": "/WeatherForecast",
-      "UpstreamHttpMethod": [ "GET" ]
     }, //Routes for Authentication
     {
-      "DownstreamPathTemplate": "/users",
+      "DownstreamPathTemplate": "/api/v1/users",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -62,10 +47,34 @@
         }
       ],
       "UpstreamPathTemplate": "/users",
-      "UpstreamHttpMethod": [ "POST", "GET" ]
+      "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/users/{id}",
+      "DownstreamPathTemplate": "/api/v1/users/register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44304"
+        }
+      ],
+      "UpstreamPathTemplate": "/users/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/users/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44304"
+        }
+      ],
+      "UpstreamPathTemplate": "/users/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/users/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -77,7 +86,7 @@
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
     }, //Routes for Rating
     {
-      "DownstreamPathTemplate": "/rating/{id}",
+      "DownstreamPathTemplate": "/api/v1/rating/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -89,7 +98,7 @@
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/rating/movie/{id}",
+      "DownstreamPathTemplate": "/api/v1/rating/movie/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -101,7 +110,7 @@
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/rating/user/{id}",
+      "DownstreamPathTemplate": "/api/v1/rating/user/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -113,7 +122,7 @@
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/rating",
+      "DownstreamPathTemplate": "/api/v1/rating",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -122,6 +131,42 @@
         }
       ],
       "UpstreamPathTemplate": "/rating",
+      "UpstreamHttpMethod": [ "POST" ]
+    }, //Routes for Recommendation
+    {
+      "DownstreamPathTemplate": "/api/v1/movieprediction",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44361"
+        }
+      ],
+      "UpstreamPathTemplate": "/movieprediction",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/movieprediction/similar-user",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44361"
+        }
+      ],
+      "UpstreamPathTemplate": "/movieprediction/similar-user",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/movieprediction/map-movies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44361"
+        }
+      ],
+      "UpstreamPathTemplate": "/movieprediction/map-movies",
       "UpstreamHttpMethod": [ "POST" ]
     }
   ]

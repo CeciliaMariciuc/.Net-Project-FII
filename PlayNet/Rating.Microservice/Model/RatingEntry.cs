@@ -1,10 +1,8 @@
-﻿
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Rating.Microservice.Model
 {
-    [BsonIgnoreExtraElements]
     public class RatingEntry
     {
         [BsonId]
@@ -14,8 +12,8 @@ namespace Rating.Microservice.Model
         public string MovieTitle { get; set; }
         public string MovieId { get; set; }
         public int UserRating { get; set; }
-        //public double Rated { get; set; }
-        //public int Votes { get; set; }
+        public double Rated { get; set; }
+        public int Votes { get; set; }
 
     }
 }

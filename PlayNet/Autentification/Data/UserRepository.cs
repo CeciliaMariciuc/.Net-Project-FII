@@ -41,6 +41,41 @@ namespace Autentification.Data
             }
         }
 
+        public async Task<User> CheckUser(string email, string password)
+        {
+            try
+            {
+                return await _context.Users
+                    .Find(user => user.Email == email && user.Password == password)
+                    .FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<bool> IsEmailUsed(string email)
+        {
+            try
+            {
+              User user =  await _context.Users
+                    .Find(user => user.Email == email)
+                    .FirstOrDefaultAsync();
+
+                if (user != null)
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task UpdateUser(string id,User user)
         {
             try 
