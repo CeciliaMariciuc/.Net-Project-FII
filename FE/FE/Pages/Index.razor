@@ -4,6 +4,9 @@
 
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 
+<br />
+
+
 <p>
     <h1>Movies</h1>
     Movies move us like nothing else can, whether they’re scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience
@@ -18,12 +21,11 @@
         }
     </div>
 </!BSCarousel-->
-
 @if (_movies.Any())
 {
     <div class="card" style="width: 18rem;">
         @foreach (var movie in _movies)
-        { 
+        {
             <div class="movie-el">
                 <div class="card-body">
                     <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">

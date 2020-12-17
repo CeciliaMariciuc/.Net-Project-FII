@@ -2,43 +2,94 @@
 @inject HttpClient Http
 @using Models
 
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../css/register.css">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-</head>
-<body>
-   <form>
-        <label for="psw"><b>First Name</b></label>
-        <input @bind="firstName" type="text" id="firstname" class="fadeIn-second" name="login" placeholder="First Name" required>
-        <label for="psw"><b>Last Name</b></label>
-        <input @bind="lastName" type="text" id="lastname" class="fadeIn second" name="login" placeholder="Last Name" required>
-        <label for="psw"><b>Email</b></label>
-        <input @bind="email" type="text" id="email" class="fadeIn second" name="login" placeholder="E-mail" required>
-        <label for="psw"><b>Password</b></label>
-        <input @bind="password" type="password" id="password" class="fadeIn third" name="login" placeholder="password" required>
+<link rel="stylesheet" type="text/css" href="../css/register.css">
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input @bind="password" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-        <input @onclick="@AddUser" type="submit" class="fadeIn fourth" value="Register">
-        <hr>
-    </form>
-        
+<section class="register-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 register-sec">
+                <h2 class="text-center">Register as a PlatNet-ter Now</h2>
+                <form class="register-form">
+                    <div class="form-group">
+                        <label for="exampleInputFirstName" class="text-uppercase">First Name</label>
+                        <input @bind="firstName" type="text" id="firstname" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputLastNme" class="text-uppercase">Last Name</label>
+                        <input @bind="lastName" type="text" id="lastname" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail" class="text-uppercase">Email</label>
+                        <input @bind="email" type="text" id="email" class="form-control" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword" class="text-uppercase">Password</label>
+                        <input @bind="password" type="password" id="password" class="form-control" placeholder="password">
+                    </div>
 
-        @code {
-            private string firstName;
-            private string lastName;
-            private string email;
-            private string password;
 
-            private async Task AddUser()
-            {
-                var addUser = new User { FirstName = firstName, LastName = lastName, Email = email, Password = password };
-                await Http.PostAsJsonAsync("https://localhost:44385/users", addUser);
-            }
+                    <div class="form-check">
+
+                        <input @onclick="@AddUser" type="submit" class="btn btn-login float-right" value="Register" disabled=@isSubmitting>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-8 banner-sec">
+                <img src="https://i.ibb.co/6s19zXR/movies.jpg" alt="First slide">
+
+                <div class="banner-text">
+                    <h2>PLAYNET REGISTER!</h2>
+                    <p>We can't wait to have you in our community as a member. Join now for more features! </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@if (registerResponse != null)
+{
+    <div class="register-response">
+        Your registration was successful, please go to the login page to acces the account. Thank you for joining PlayNet!
+    </div>
+}
+else @if (usedEmail == true)
+{
+<div class="register-response">
+    This email address is already used by another user!
+</div>
+}
+
+
+@code {
+    private string firstName;
+    private string lastName;
+    private string email;
+    private string password;
+
+    private User registerResponse = null;
+    bool isSubmitting;
+    private bool usedEmail = false;
+
+    private async Task AddUser()
+    {
+        isSubmitting = true;
+        var addUser = new User { FirstName = firstName, LastName = lastName, Email = email, Password = password };
+        var response = await Http.PostAsJsonAsync("https://localhost:44385/users/register", addUser);
+
+        if (response.IsSuccessStatusCode)
+        {
+            registerResponse = await response.Content.ReadFromJsonAsync<User>();
+        }
+        else
+        {
+            usedEmail = true;
+            registerResponse = null;
         }
 
-</body>
-</html>
+        isSubmitting = false;
+    }
+}

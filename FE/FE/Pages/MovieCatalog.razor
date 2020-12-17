@@ -3,39 +3,107 @@
 @using Models
 <h3>MovieCatalog</h3>
 
+<link rel="stylesheet" type="text/css" href="../css/moviecatalog.css">
 <div class="text-center">
-    <p>Here we will only have a guest page.</p>
-
+    
     <hr />
+    <form @onsubmit="GetFilteredMovies">
+        <label >
+            Title:
+            <input type="search" @bind="searchTitle" />
+        </label>
+        <label>
+            Genre:
+            <select id="genre" @bind="genre">
+                <option value="Family">Family</option>
+                <option value="Biography">Biography</option>
+                <option value="Sport">Sport</option>
+                <option value="History">History</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Action">Action</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Crime">Crime</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Music">Music</option>
+                <option value="Horror">Horror</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="War">War</option>
+                <option value="Musical">Musical</option>
+                <option value="Animation">Animation</option>
+            </select>
+        </label>
+        <label>
+            Sort by:
+            <select id="sort" @bind="sort">
+                <option value="Title">Movie Title</option>
+                <option value="Rating">User Rating</option>
+            </select>
+        </label>
+        <label>
+            Sort Order:
+            <select id="sort_order" @bind="sort_order">
+                <option value="1">Ascending</option>
+                <option value="-1">Descending</option>
+            </select>
+        </label>
+        <button type="submit">Search</button>
 
-    @if (_movies.Any())
-    {
-        <div class="movie-list">
-            @foreach (var movie in _movies)
-            {
-                <div class="movie-el">
-                    <div class="card-body">
-                        <h5 class="movie-title">@movie.Title</h5>
-                        <p class="movie-info">
-                            <strong>Description: </strong> @movie.Description
-                        </p>
+        <div><br /><br /><br /></div>
+        <br>
+        @if (_movies.Any())
+        {
+            <div class="movie-list">
+                @foreach (var movie in _movies)
+                {
+                    <div class="movie-card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/images/1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="movie-title">@movie.Title</h5>
+                            <p class="movie-info">
+                                <strong>Rating: </strong> @movie.Rating
+                                <strong>Year: </strong> @movie.Year
+                                <strong>Description: </strong> @movie.Description
+                            </p>
+                        </div>
                     </div>
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p>No Movies Found</p>
-    }
+                }
+            </div>
+        }
+        else if (isLoaded == true)
+        {
+            <p>No Movies Found</p>
+        }
+    </form>
 
-    @functions {
+    @code {
 
         private List<Movie> _movies = new List<Movie>();
+        private string searchTitle = "";
+        private string sort = "Title";
+        private string sort_order = "1";
+        private string genre = "";
+        private bool isLoaded;
+        Movie movie = new Movie();
 
         protected override async Task OnInitializedAsync() => await GetMovies();
 
-        private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44301/movies");
+        private async Task GetMovies()
+        {
+            isLoaded = false;
+            _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies");
+            isLoaded = true;
+        }
+
+        private async Task GetFilteredMovies()
+        {
+            isLoaded = false;
+            _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies/query?title=" + searchTitle + "&genre=" + genre + "&sort=" + sort + "&sort_order=" + sort_order);
+            isLoaded = true;
+        }
     }
 
 </div>

@@ -1,71 +1,94 @@
 ﻿@page "/login"
-@using FE.Models
+@inject HttpClient Http
+@using Models
 
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 
-<center>
-    <div class="col-8 card">
-        <div class="col-12 row">
-            <p>&nbsp;</p>
-        </div>
-        <div class="col-12 row">
-            <div class="col-6" style="border-right:groove">
-                <img src="/images/users.svg" width="400px" height="400px" />
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Login Now</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail" class="text-uppercase">Email</label>
+                        <input @bind="email" type="text" id="email" class="form-control" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword" class="text-uppercase">Password</label>
+                        <input @bind="password" type="password" id="password" class="form-control" placeholder="password">
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <small>Remember me</small>
+                        </label>
+
+                        <input @onclick="@LoginUser" type="submit" class="btn btn-login float-right" value="Login" disabled=@isSubmitting>
+                    </div>
+                </form>
             </div>
-            <div class="col-6" style="border-left:groove">
-                <EditForm Model="@user" OnValidSubmit="@ValidateUser">
-                    <div>
-                        <br /><br /><br /><br /><br />
-                    </div>
-                    <div>
-                        <h3 style="font-weight:bold; color:purple">PlayNet Login</h3>
-                    </div>
-                    <div>
-                        <br />
-                    </div>
-                    <div class="col-12 row">
-                        <input class="form-control col-12" @bind="user.Email" placeholder="Email Address" />
-                    </div>
-                    <br />
-                    <div class="col-12 row">
-                        <input type="password" class="form-control col-12" @bind="user.Password" placeholder="Password" />
-                    </div>
-                    <br />
-                    <div class="col-12 row">
-                        <span class="col-12"></span>
-                        <input type="submit" href="index" class="form-control col-6 btn btn-primary" value="Login" />
-                        <a href="/register" class="col-3">Register</a>
-                    </div>
-                    <br />
-                    <div class="col-12 row" style="text-align:left; font-weight:bold">
-                        <span class="col-12">@LoginMesssage</span>
-                    </div>
-                </EditForm>
 
+            <div class="col-md-8 banner-sec">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="https://i.ibb.co/qRPSB9x/movie.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="banner-text">
+                                    <h2>Welcome to PLAYNET!</h2>
+                                    <p>Login to see more features and have a great movie experince! You don't have an account yet? Don't miss out and go to our <a href="/register">register</a> page. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-12 row">
-            <p>&nbsp;</p>
-        </div>
+
     </div>
-</center>
+</section>
+@if (loginResponse != null)
+{
+    <div class="login-response">
+        You are now logged in! Welcome to PlayNet!
+    </div>
+}
+else @if (loginFailed == true)
+{
+<div class="login-response">
+    Please enter a correct username/email and password. Note that the password field is case-sensitive.
+</div>
+}
 
 
-@code{
-    private User user;
+@code {
+    private string email;
+    private string password;
+    private LoggedUser loginResponse = null;
 
-    public string LoginMesssage { get; set; }
+    bool isSubmitting;
+    private bool loginFailed = false;
 
-    protected override Task OnInitializedAsync()
+    private async Task LoginUser()
     {
-        user = new User();
-        return base.OnInitializedAsync();
-    }
+        isSubmitting = true;
+        var loginUser = new User { Email = email, Password = password };
+        var response = await Http.PostAsJsonAsync("https://localhost:44385/users/login", loginUser);
 
-    private async Task<bool> ValidateUser()
-    {
-        //assume that user is valid
-        //call an API
-
-        return await Task.FromResult(true);
+        if (response.IsSuccessStatusCode)
+        {
+            loginResponse = await response.Content.ReadFromJsonAsync<LoggedUser>();
+            Console.WriteLine(loginResponse);
+        }
+        else
+        {
+            loginFailed = true;
+            loginResponse = null;
+        }
+        isSubmitting = false;
     }
 }
+
+
