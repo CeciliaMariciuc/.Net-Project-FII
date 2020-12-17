@@ -832,6 +832,6 @@ C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard
 C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\compressed\_framework\_bin\Syncfusion.ExcelExport.Net.dll.br
 C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\compressed\_framework\_bin\Syncfusion.PdfExport.Net.dll.br
 C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\compressed\_framework\_bin\Newtonsoft.Json.dll.br
-C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\WjT2Fw7oFtaYuriEb6qPX7nWo7xp7ECqoGUW5_yKpvk=.hash
-C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\qIIlnadscqqktPolr2OEh_Bau211KUzC8IBqyU2oCZ8=.hash
-C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\s2afBlFbfLe0O_YlG2ro1Mk-016n35ALzmdUFDa8H-M=.hash
+C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\F6fLX746Jg4MRmm_zMcxArK3_n_iN8Q4qKV4nKyu6Qw=.hash
+C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\DbW8WdqKsL5QT9L1plHg8dIwDNOjkwTK2gMQ4HBZydw=.hash
+C:\Users\Teodora\Desktop\poiect net\.Net-Project-FII\FE\FE\obj\Debug\netstandard2.1\integrity\FLIQgKQIznDAgbDuyjJCr6CKIwbRfzDX7Gp2ala7PoE=.hash

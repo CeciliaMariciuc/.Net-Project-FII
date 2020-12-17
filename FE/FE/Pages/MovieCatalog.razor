@@ -5,16 +5,17 @@
 
 <link rel="stylesheet" type="text/css" href="../css/moviecatalog.css">
 <div class="text-center">
-    
+
+
     <hr />
     <form @onsubmit="GetFilteredMovies">
-        <label >
+        <label>
             Title:
-            <input type="search" @bind="searchTitle" />
+            <input type="search" @bind="searchTitle" placeholder="Movie Title" />
         </label>
         <label>
             Genre:
-            <select id="genre" @bind="genre">
+            <select id="genre" @bind="genre" placeholder="Choose the genre">
                 <option value="Family">Family</option>
                 <option value="Biography">Biography</option>
                 <option value="Sport">Sport</option>
@@ -52,33 +53,46 @@
         </label>
         <button type="submit">Search</button>
 
-        <div><br /><br /><br /></div>
-        <br>
-        @if (_movies.Any())
-        {
-            <div class="movie-list">
-                @foreach (var movie in _movies)
-                {
-                    <div class="movie-card" style="width: 18rem;">
-                        <img class="card-img-top" src="~/images/1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="movie-title">@movie.Title</h5>
-                            <p class="movie-info">
-                                <strong>Rating: </strong> @movie.Rating
-                                <strong>Year: </strong> @movie.Year
-                                <strong>Description: </strong> @movie.Description
-                            </p>
-                        </div>
-                    </div>
-                }
-            </div>
-        }
-        else if (isLoaded == true)
-        {
-            <p>No Movies Found</p>
-        }
-    </form>
+    <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+    </div>
 
+    @if (_movies.Any())
+    {
+        <div class="movie-list">
+            @foreach (var movie in _movies)
+            {
+                <div class="movie-card" style="width: 18rem;">
+                    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="movie-title">@movie.Title</h5>
+                        <p class="movie-info">
+                            <strong>Rating: </strong> @movie.Rating
+                            <strong>Year: </strong> @movie.Year
+                            <strong>Description: </strong> @movie.Description
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else if (isLoaded == true)
+    {
+        <p>No Movies Found</p>
+    }
+        </form>
     @code {
 
         private List<Movie> _movies = new List<Movie>();

@@ -1,131 +1,158 @@
 ﻿@page "/"
 @using Models
-@inject HttpClient Http
+
 
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 
+<br>
 <br />
-
-
-<p>
-    <h1>Movies</h1>
-    Movies move us like nothing else can, whether they’re scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience
-</p>
-<!--BSCarousel NumberOfItems="@items.Count">
-    <div class="carousel-inner">
-        @for (int i = 0; i < items.Count; i++)
-        {
-            <BSCarouselItem src="@items[i].Source" alt="@items[i].Alt" style=" width:700px;
-                                height:300px"></BSCarouselItem>
-
-        }
-    </div>
-</!BSCarousel-->
-@if (_movies.Any())
-{
-    <div class="card" style="width: 18rem;">
-        @foreach (var movie in _movies)
-        {
-            <div class="movie-el">
-                <div class="card-body">
-                    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
-                    <h5 class="movie-title">@movie.Title</h5>
-                    <p class="movie-info">
-                        <strong>Description: </strong> @movie.Description
-                    </p>
-                </div>
-            </div>
-        }
-    </div>
-}
-else
-{
-    <p>No Movies Found</p>
-}
-
-
-<!--div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-</!-div>
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+<br />
+<br><div class="title">
+    <br />
+    <h1>
+        PlayNet<br />
+        <br />
+        How YOU DOIN?
+    </h1>
 </div>
 
-<h2>Action Movies</h2>
-<div class="container">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-</div>
-<h2>Romantic Movie</h2>
-<div class="container">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-</div-->
+<br>
+<br>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<h3>Comedies</h3>
+<div class="carousel_wrapper">
+    <div class="carousel">
+        <div class="slide one">
+            <img src="https://i.redd.it/atyf1poo8oe31.jpg" />
+        </div>
+        <div class="slide two">
+            <img src="https://www.joblo.com/assets/images/oldsite/posters/images/full/inception-poster-quad.jpg" />
+        </div>
+        <div class="slide three">
+            <img src="https://mcdn.wallpapersafari.com/medium/59/68/grun2y.jpg" />
+        </div>
+        <div class="slide four">
+            <img src="https://mcdn.wallpapersafari.com/medium/26/10/WqhBZD.jpg" />
+        </div>
+        <div class="slide five">
+            <img src="https://cdn.wallpapersafari.com/50/11/5UzEK0.jpg" />
+        </div>
+        <div class="slide six">
+            <img src="https://mcdn.wallpapersafari.com/medium/43/34/794rTN.jpg" />
+        </div>
+        <div class="slide seven">
+            <img src="https://mcdn.wallpapersafari.com/medium/79/74/9zxDUj.jpg" />
+        </div>
+        <div class="slide eight">
+            <img src="https://mcdn.wallpapersafari.com/medium/37/89/Pb9243.jpg" />
+        </div>
+        <div class="slide nine">
+            <img src="https://mcdn.wallpapersafari.com/medium/35/27/rJGLOP.jpg" />
+        </div>
 
-@functions {
+    </div><!-- / .carousel -->
+</div><!-- / .carousel_wrapper -->
+<br>
+<br>
 
-    private List<Movie> _movies = new List<Movie>();
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Romantic Movies</h3>
+<div class="carousel_wrapper">
+    <div class="carousel">
+        <div class="slide one">
+            <img src="https://i.redd.it/atyf1poo8oe31.jpg" />
+        </div>
+        <div class="slide two">
+            <img src="https://www.joblo.com/assets/images/oldsite/posters/images/full/inception-poster-quad.jpg" />
+        </div>
+        <div class="slide three">
+            <img src="https://mcdn.wallpapersafari.com/medium/59/68/grun2y.jpg" />
+        </div>
+        <div class="slide four">
+            <img src="https://mcdn.wallpapersafari.com/medium/26/10/WqhBZD.jpg" />
+        </div>
+        <div class="slide five">
+            <img src="https://cdn.wallpapersafari.com/50/11/5UzEK0.jpg" />
+        </div>
+        <div class="slide six">
+            <img src="https://mcdn.wallpapersafari.com/medium/43/34/794rTN.jpg" />
+        </div>
+        <div class="slide seven">
+            <img src="https://mcdn.wallpapersafari.com/medium/79/74/9zxDUj.jpg" />
+        </div>
+        <div class="slide eight">
+            <img src="https://mcdn.wallpapersafari.com/medium/37/89/Pb9243.jpg" />
+        </div>
+        <div class="slide nine">
+            <img src="https://mcdn.wallpapersafari.com/medium/35/27/rJGLOP.jpg" />
+        </div>
 
-    protected override async Task OnInitializedAsync() => await GetMovies();
+    </div><!-- / .carousel -->
+</div><!-- / .carousel_wrapper -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44386/");
-}
+<h3>Action Movies</h3>
+<div class="carousel_wrapper">
+    <div class="carousel">
+        <div class="slide one">
+            <img src="https://i.redd.it/atyf1poo8oe31.jpg" />
+        </div>
+        <div class="slide two">
+            <img src="https://www.joblo.com/assets/images/oldsite/posters/images/full/inception-poster-quad.jpg" />
+        </div>
+        <div class="slide three">
+            <img src="https://mcdn.wallpapersafari.com/medium/59/68/grun2y.jpg" />
+        </div>
+        <div class="slide four">
+            <img src="https://mcdn.wallpapersafari.com/medium/26/10/WqhBZD.jpg" />
+        </div>
+        <div class="slide five">
+            <img src="https://cdn.wallpapersafari.com/50/11/5UzEK0.jpg" />
+        </div>
+        <div class="slide six">
+            <img src="https://mcdn.wallpapersafari.com/medium/43/34/794rTN.jpg" />
+        </div>
+        <div class="slide seven">
+            <img src="https://mcdn.wallpapersafari.com/medium/79/74/9zxDUj.jpg" />
+        </div>
+        <div class="slide eight">
+            <img src="https://mcdn.wallpapersafari.com/medium/37/89/Pb9243.jpg" />
+        </div>
+        <div class="slide nine">
+            <img src="https://mcdn.wallpapersafari.com/medium/35/27/rJGLOP.jpg" />
+        </div>
 
+    </div><!-- / .carousel -->
+</div><!-- / .carousel_wrapper -->

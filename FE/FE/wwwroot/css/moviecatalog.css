@@ -1,51 +1,46 @@
 ﻿body {
     background-color: white;
     padding: 0px;
-    margin: auto;
+    margin: 0px;
     width: 100%;
     height: 100vh;
     font-family: 'Lato';
 }
-label{
-    margin
-}
+
 .movie-list {
-    
-    display: block;
     position: absolute;
-    top: auto;
-    left: 57%;
+    left: 58%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1000px;
-    height: 300px;
+    width:94%;
+    max-width: 900px;
+    height:80%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .movie-card {
-    margin-top: 20%;
+    margin-top: 10%;
     width: 100px;
-    height: 300px;
     display: inline-block;
     flex: 1;
     flex-basis: 300px;
     flex-grow: 0;
     height: 440px;
-    background: #6495ed; /* fallback for old browsers */
-    background: rgb(212,45,253);
-    background: linear-gradient(0deg, rgba(212,45,253,1) 29%, rgba(10,15,144,1) 78%);
+    background: indigo;
     border: 2px solid #fff;
     box-shadow: 0px 4px 7px rgba(0,0,0,.5);
     cursor: pointer;
     transition: all .5s cubic-bezier(.8,.5,.2,1.4);
     overflow: hidden;
     position: relative;
-    color: indigo;
 }
+
 .movie-card img {
         width: 100%;
         height: 100%;
         transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-    }
+  }
 
 .card-body {
     position: absolute;
@@ -60,10 +55,10 @@ label{
     clip-path: circle(0% at 100% 100%);
 }
 
-.movie-card:hover .card-body{
-left:0px;
-transition: all .7s ease-in-out;
-clip-path: circle(75%);
+.movie-card:hover .card-body {
+    left: 0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
 }
 
 .movie-card:hover {
@@ -71,12 +66,14 @@ clip-path: circle(75%);
     box-shadow: 0px 2px 3px rgba(0,0,0,.3);
     transform: scale(.97);
 }
-.movie-card:hover img {
+
+    .movie-card:hover img {
         transition: all .5s cubic-bezier(.8,.5,.2,1.4);
         transform: scale(1.6) rotate(20deg);
         filter: blur(3px);
- }
- .movie-card h5{
+    }
+
+.movie-card h5 {
     color: #ff3838;
     letter-spacing: 1px;
     margin: 0px;
@@ -87,6 +84,13 @@ clip-path: circle(75%);
     height: 70%;
 }
 
-.form{
-    margin:10px;
+input, select {
+    border: none;
+    background: hsl(0 0% 93%);
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+    color: black;
+    font-size:24px;
 }
+
+
