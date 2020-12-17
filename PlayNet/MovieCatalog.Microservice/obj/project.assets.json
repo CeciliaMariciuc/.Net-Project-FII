@@ -2789,7 +2789,7 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "6BBc6BUa7pWFL7KUI/c8wb18IobTZHTtcQKksxJI5F9DRDShdtOvBEJzg5jJbFdTll7gRE+5yXUlq72ciLE+QQ==",
+      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
@@ -4735,23 +4735,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cecil\\.nuget\\packages\\": {},
+    "C:\\Users\\Teodora\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
+      "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
       "projectName": "MovieCatalog.Microservice",
-      "projectPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
-      "packagesPath": "C:\\Users\\cecil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cecil\\OneDrive\\Desktop\\An_3\\I.NET\\Proiect\\Git\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\obj\\",
+      "projectPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\MovieCatalog.Microservice.csproj",
+      "packagesPath": "C:\\Users\\Teodora\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\MovieCatalog.Microservice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\cecil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Teodora\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

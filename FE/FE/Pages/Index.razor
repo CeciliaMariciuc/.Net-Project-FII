@@ -1,46 +1,129 @@
 ﻿@page "/"
-<!--h2>Heading </!-h2>
-<BlazorStrap.BSCarousel NumberOfItems="@items.Count">
+@using Models
+@inject HttpClient Http
+
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+
+<p>
+    <h1>Movies</h1>
+    Movies move us like nothing else can, whether they’re scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience
+</p>
+<!--BSCarousel NumberOfItems="@items.Count">
     <div class="carousel-inner">
         @for (int i = 0; i < items.Count; i++)
         {
-            <BlazorStrap.BSCarouselItem Src="@items[i].Source" Alt="@items[i].Alt" style="width:100%; height:40px" />
+            <BSCarouselItem src="@items[i].Source" alt="@items[i].Alt" style=" width:700px;
+                                height:300px"></BSCarouselItem>
+
         }
     </div>
-    <BlazorStrap.BSCarouselControl CarouselDirection="=BlazorStrap.CarouselDirection.Previous" NumberOfItems="@items.Count" />
-    <BlazorStrap.BSCarouselControl CarouselDirection="=BlazorStrap.CarouselDirection.Next" NumberOfItems="@items.Count" />
-</BlazorStrap.BSCarousel>-->
+</!BSCarousel-->
 
-
-@code {
-    IList<Item> items = new List<Item>()
+@if (_movies.Any())
 {
-        new Item {
-            Source = "/images/1.jpg",
-
-            Alt ="First Slide",
-            Caption = "Slide 1",
-            Header = "Slide 1 Header"
-        },
-        new Item {
-            Source = "/images/2.jpg",
-            Alt ="Second Slide",
-            Caption = "Slide 2",
-            Header = "Slide 2 Header"
-        },
-     new Item {
-            Source = "/images/1.jpg",
-            Alt ="Third Slide",
-            Caption = "Slide 3",
-            Header = "Slide 3 Header"
+    <div class="card" style="width: 18rem;">
+        @foreach (var movie in _movies)
+        { 
+            <div class="movie-el">
+                <div class="card-body">
+                    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+                    <h5 class="movie-title">@movie.Title</h5>
+                    <p class="movie-info">
+                        <strong>Description: </strong> @movie.Description
+                    </p>
+                </div>
+            </div>
         }
-    };
-
-    class Item
-    {
-        public string Source { get; set; }
-        public string Alt { get; set; }
-        public string Caption { get; set; }
-        public string Header { get; set; }
-    }
+    </div>
 }
+else
+{
+    <p>No Movies Found</p>
+}
+
+
+<!--div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</!-div>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+
+<h2>Action Movies</h2>
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div>
+<h2>Romantic Movie</h2>
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+</div-->
+
+
+
+@functions {
+
+    private List<Movie> _movies = new List<Movie>();
+
+    protected override async Task OnInitializedAsync() => await GetMovies();
+
+    private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44386/");
+}
+

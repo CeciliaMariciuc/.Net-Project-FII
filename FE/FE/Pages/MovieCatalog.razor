@@ -35,7 +35,7 @@
 
         protected override async Task OnInitializedAsync() => await GetMovies();
 
-        private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies");
+        private async Task GetMovies() => _movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44301/movies");
     }
 
 </div>

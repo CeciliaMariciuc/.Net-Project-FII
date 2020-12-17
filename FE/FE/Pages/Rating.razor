@@ -1,40 +1,49 @@
 ﻿@page "/rating"
 @inject HttpClient Http
+@using Syncfusion.Blazor.DropDowns
 @using Models
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/rating.css">
     <h1>Reating</h1>
-    <p>Please insert the movie name</p>
-    <title>Star rating using pure CSS</title>
 </head>
 <body>
-    <input @bind="movieTitle" type="text" id="movieTitle" name="rating" />
-    <div class="rate">
-        <input type="radio" id="star5" name="rate" value="5" />
-        <label for="star5" title="text">5 stars</label>
-        <input type="radio" id="star4" name="rate" value="4" />
-        <label for="star4" title="text">4 stars</label>
-        <input type="radio" id="star3" name="rate" value="3" />
-        <label for="star3" title="text">3 stars</label>
-        <input type="radio" id="star2" name="rate" value="2" />
-        <label for="star2" title="text">2 stars</label>
-        <input type="radio" id="star1" name="rate" value="1" />
-        <label for="star1" title="text">1 star</label>
-    </div>
-@code {
-        private string movieTitle;
-        public string Id { get; set; }
-        public int UserId { get; set; }
-        public int MovieId { get; set; }
-        public int userRating { get; set; }
-        public double Rated { get; set; }
-        public int Votes { get; set; }
-        private async Task AddRating()
-        {
-            var addRating = new RatingEntry { MovieTitle = movieTitle, UserRating = userRating };
-            await Http.PostAsJsonAsync("https://localhost:44385/rating", addRating);
+    <p>Please insert the movie name</p>
+    <div class="col-lg-12 control-section">
+        <div class="control_wrapper">
+            <SfDropDownList TValue="string" TItem="Movie" Placeholder="Select a movie" AllowFiltering="true" DataSource="@movies">
+                <DropDownListFieldSettings Text="MovieTitle" Value="Title"></DropDownListFieldSettings>
+            </SfDropDownList>
+        </div>
+        </div>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">10 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">9 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">8 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">7 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">6 star</label>
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+
+        @code {
+            private List<Movie> movies = new List<Movie>();
+            protected override async Task OnInitializedAsync() => await GetMovies();
+
+            private async Task GetMovies() => movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44301/movies");
         }
-    }
 </body>
 </html>
