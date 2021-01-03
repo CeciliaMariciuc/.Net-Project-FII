@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Autentification.Model;
+using Authentication.Microservice.Model.Requests;
 using MongoDB.Driver;
 
 namespace Autentification.Data
@@ -47,6 +48,20 @@ namespace Autentification.Data
             {
                 return await _context.Users
                     .Find(user => user.Email == email && user.Password == password)
+                    .FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<User> GetByEmail(string email)
+        {
+            try
+            {
+                return await _context.Users
+                    .Find(user => user.Email == email)
                     .FirstOrDefaultAsync();
             }
             catch (Exception ex)
@@ -105,6 +120,23 @@ namespace Autentification.Data
             try
             {
                 await _context.Users.InsertOneAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public async Task ChangePassword(ChangePasswordRequest request)
+        {
+            try
+            {
+                User user = await _context.Users
+                    .Find(user => user.Id == request.UserId)
+                    .FirstOrDefaultAsync();
+                user.Password = request.NewPassword;
+                await UpdateUser(request.UserId, user);
             }
             catch (Exception ex)
             {

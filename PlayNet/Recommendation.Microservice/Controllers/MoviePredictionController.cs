@@ -5,6 +5,7 @@ using Recommendation.Microservice.DataModels;
 using Recommendation.Microservice.Helpers;
 using Recommendation.Microservice.Model;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Recommendation.Microservice.Controllers
@@ -23,20 +24,19 @@ namespace Recommendation.Microservice.Controllers
         }
 
         [HttpPost]
-        [Authorize]
-        public async Task<ActionResult<MovieMap>> GetTopPrediction([FromBody] MovieData movieData)
+        public async Task<ActionResult<List<MovieMap>>> GetTop10Predictions([FromBody] MovieData movieData)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            MovieMap movie = await _service.GetTopPrediction(movieData.UserId);
-            if(movie == null)
+            List<MovieMap> movies = await _service.GetTop10Prediction(movieData.UserId);
+            if(!movies.Any())
             {
                return NotFound();
             }
-            return Ok(movie);
+            return Ok(movies);
         }
 
         [HttpPost("score")]

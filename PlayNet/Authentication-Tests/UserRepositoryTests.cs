@@ -1,6 +1,5 @@
 ﻿using Autentification.Data;
 using Autentification.Model;
-using MongoDB.Driver;
 using Moq;
 using System;
 using Xunit;

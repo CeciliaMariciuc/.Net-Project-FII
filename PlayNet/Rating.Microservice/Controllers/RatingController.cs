@@ -23,6 +23,13 @@ namespace Rating.Microservice.Controllers
             {
             return await _repository.GetByMovieId(movieId);
         }
+
+        [HttpGet("top10-popular")]
+        public async Task<IEnumerable<string>> GetByPopularity()
+        {
+            return await _repository.GetTop10ByPopularity();
+        }
+
         [HttpGet("{id}")]
         public async Task<RatingEntry> GetById(string id)
         {

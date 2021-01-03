@@ -11,6 +11,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
+using Authentication.Microservice.Model;
 
 namespace Autentification
 {
@@ -35,6 +36,24 @@ namespace Autentification
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ICryptService, CryptService>();
             services.AddControllers();
+
+           /* services.AddTransient<IEmailSender, MailKitEmailSender>();
+            services.Configure<MailKitEmailSenderOptions>(options =>
+            {
+                options.Host_Address = "smtp-relay.sendinblue.com";
+                options.Host_Port = 587;
+                options.Host_Username = "PlayNet";
+                options.Host_Password = "3Z8cG7WBnDVEd21Q";
+                options.Sender_EMail = "cecilia.mariciuc27@gmail.com";
+                options.Sender_Name = "Cecilia Mariciuc";
+            });*/
+
+            services.AddScoped<IEmailSender, EmailSender>();
+
+            var emailConfig = Configuration
+               .GetSection("EmailConfiguration")
+               .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();

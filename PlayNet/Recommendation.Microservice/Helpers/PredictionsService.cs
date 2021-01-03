@@ -3,6 +3,7 @@ using Recommendation.Microservice.Data;
 using Recommendation.Microservice.DataModels;
 using Recommendation.Microservice.Model;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Recommendation.Microservice.Helpers
@@ -18,11 +19,11 @@ namespace Recommendation.Microservice.Helpers
             _repository = repository;
         }
 
-        public async Task<MovieMap> GetTopPrediction(float userId)
+        public async Task<List<MovieMap>> GetTop10Prediction(float userId)
         {
             IEnumerable<MovieMap> movies = await _repository.GetAll();
-            float bestScore = 0F;
-            int bestMovieId = 1;
+            List<MovieScore> scores = new List<MovieScore>();
+            List<MovieMap> bestMovies = new List<MovieMap>();
             foreach (MovieMap movie in movies)
             {
                 MovieData movieData = new MovieData
@@ -32,14 +33,32 @@ namespace Recommendation.Microservice.Helpers
                 };
 
                 var score = await PredictScore(movieData);
-                if (score > bestScore)
+                MovieScore movieScore = new MovieScore
                 {
-                    bestScore = score;
-                    bestMovieId = movie.MovieId;
+                    MovieId = movie.MovieId,
+                    Score = score
+                };
+                if (scores.Count < 10)
+                {
+                    scores.Add(movieScore);
+                }
+                else
+                {
+                    MovieScore minimum_score = scores.OrderByDescending(s => s.Score).First();
+                    if(score > minimum_score.Score)
+                    {
+                        scores.Remove(minimum_score);
+                        scores.Add(movieScore);
+                    }
                 }
             }
 
-            return await _repository.GetByMovieId(bestMovieId);
+            List<MovieScore> sortedScores = scores.OrderByDescending(s => s.Score).ToList();
+            foreach(MovieScore movieScore in sortedScores)
+            {
+                bestMovies.Add(await _repository.GetByMovieId(movieScore.MovieId));
+            }
+            return bestMovies;
         }
 
         public async Task<float> PredictScore(MovieData movieData)

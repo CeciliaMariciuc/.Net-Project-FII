@@ -4,6 +4,7 @@ using MovieCatalog.Microservice.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
 namespace MovieCatalog.Microservice.Controllers
 {
     [Route("api/v1/[controller]")]
@@ -23,6 +24,12 @@ namespace MovieCatalog.Microservice.Controllers
             return await _repository.GetAll();
         }
 
+        [HttpGet("top10")]
+        public async Task<IEnumerable<Movie>> GetTop10()
+        {
+            return await _repository.GetTop10Rated();
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetById(string id)
         {
@@ -32,6 +39,12 @@ namespace MovieCatalog.Microservice.Controllers
                 return NotFound();
             }
             return movie;
+        }
+
+        [HttpPost("ids")]
+        public async Task<ActionResult<List<Movie>>> GetByIds(List<string> ids)
+        {
+            return await _repository.GetByIds(ids);
         }
 
         [HttpGet("query")]
