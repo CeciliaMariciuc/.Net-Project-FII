@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using MovieCatalog.Microservice.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MovieCatalog.Microservice.Data
@@ -28,6 +29,20 @@ namespace MovieCatalog.Microservice.Data
             }
         }
 
+        public async Task<IEnumerable<Movie>> GetTop10Rated()
+        {
+            try
+            {
+                return await _context.Movies.Find(movie => true)
+                    .SortByDescending(movie => movie.Rating).Limit(10)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<Movie> GetById(string id)
         {
             try
@@ -42,7 +57,26 @@ namespace MovieCatalog.Microservice.Data
             }
 
         }
-        
+
+        public async Task<List<Movie>> GetByIds(List<string> ids)
+        {
+            try
+            {
+                List<Movie> movies = new List<Movie>();
+                foreach(string id in ids)
+                {
+                    Movie movie = await GetById(id);
+                    movies.Add(movie);
+                }
+                return movies;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public async Task<IEnumerable<Movie>> GetFiltered(string title, string genre, string sort,int sort_order)
         {
             var filterByTitle = Builders<Movie>.Filter.

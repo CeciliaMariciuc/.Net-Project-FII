@@ -14,6 +14,30 @@
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
+      "DownstreamPathTemplate": "/api/v1/movies/top10",
+      "DownstreamScheme": "https",
+      "DownstreamHostandPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44301"
+        }
+      ],
+      "UpstreamPathTemplate": "/movies/top10",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/movies/ids",
+      "DownstreamScheme": "https",
+      "DownstreamHostandPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44301"
+        }
+      ],
+      "UpstreamPathTemplate": "/movies/ids",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/v1/movies/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -95,7 +119,27 @@
         }
       ],
       "UpstreamPathTemplate": "/rating/{id}",
-      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/rating/top10-popular",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44347"
+        }
+      ],
+      "UpstreamPathTemplate": "/rating/top10-popular",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/rating/movie/{id}",
@@ -107,7 +151,11 @@
         }
       ],
       "UpstreamPathTemplate": "/rating/movie/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/rating/user/{id}",
@@ -119,7 +167,11 @@
         }
       ],
       "UpstreamPathTemplate": "/rating/user/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/rating",
@@ -131,7 +183,12 @@
         }
       ],
       "UpstreamPathTemplate": "/rating",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
+
     }, //Routes for Recommendation
     {
       "DownstreamPathTemplate": "/api/v1/movieprediction",
@@ -143,7 +200,11 @@
         }
       ],
       "UpstreamPathTemplate": "/movieprediction",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/movieprediction/similar-user",
@@ -155,7 +216,11 @@
         }
       ],
       "UpstreamPathTemplate": "/movieprediction/similar-user",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/movieprediction/map-movies",
@@ -167,7 +232,11 @@
         }
       ],
       "UpstreamPathTemplate": "/movieprediction/map-movies",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurity",
+        "AllowedScopes": []
+      }
     }
   ]
 }  

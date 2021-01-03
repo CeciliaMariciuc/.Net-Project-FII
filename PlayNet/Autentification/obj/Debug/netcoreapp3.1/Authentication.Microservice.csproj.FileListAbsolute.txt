@@ -138,9 +138,6 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentif
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.csprojAssemblyReference.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.AssemblyInfoInputs.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.AssemblyInfo.cs
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.csproj.CoreCompileInputs.cache
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.RazorTargetAssemblyInfo.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.csproj.CopyComplete
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\staticwebassets\Authentication.Microservice.StaticWebAssets.Manifest.cache
@@ -148,3 +145,12 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentif
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.pdb
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.genruntimeconfig.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.csproj.CoreCompileInputs.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\obj\Debug\netcoreapp3.1\Authentication.Microservice.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Autentification\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll

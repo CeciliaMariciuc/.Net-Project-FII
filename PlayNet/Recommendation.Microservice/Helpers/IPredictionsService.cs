@@ -7,7 +7,7 @@ namespace Recommendation.Microservice.Helpers
 {
     public interface IPredictionsService
     {
-        Task<MovieMap> GetTopPrediction(float userId);
+        Task<List<MovieMap>> GetTop10Prediction(float userId);
         Task<float> PredictScore(MovieData movieData);
         Task<IEnumerable<GeneralRating>> GetMappedMovies(IEnumerable<UserImdbRating> ratingList);
     }

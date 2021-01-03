@@ -116,9 +116,6 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.csprojAssemblyReference.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.AssemblyInfoInputs.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.AssemblyInfo.cs
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.csproj.CopyComplete
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Gateway.WebApi.StaticWebAssets.Manifest.cache
@@ -126,3 +123,13 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.pdb
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.genruntimeconfig.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Gateway.WebApi\obj\Debug\netcoreapp3.1\Gateway.WebApi.MvcApplicationPartsAssemblyInfo.cache

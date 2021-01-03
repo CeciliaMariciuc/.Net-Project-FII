@@ -45,6 +45,24 @@ namespace Rating.Microservice.Data
 
         }
 
+        public async Task<IEnumerable<string>> GetTop10ByPopularity()
+        {
+            try
+            {
+                IEnumerable<RatingEntry> ratings = await _context.Ratings
+                                .Find(rating => true).ToListAsync();
+                IEnumerable<string> most_popular = ratings.GroupBy(r => r.MovieId)
+                                                          .OrderByDescending(grp => grp.Count())
+                                                          .Select(grp => grp.Key).Take(10);
+                return most_popular;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(string userId)
         {
             try

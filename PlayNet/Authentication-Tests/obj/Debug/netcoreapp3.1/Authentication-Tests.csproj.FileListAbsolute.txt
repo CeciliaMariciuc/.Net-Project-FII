@@ -123,3 +123,9 @@ C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authenti
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\obj\Debug\netcoreapp3.1\Authentication-Tests.csproj.CoreCompileInputs.cache
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\cecil\OneDrive\Desktop\An_3\I.NET\Proiect\PlayNet-back\PlayNet\Authentication-Tests\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
