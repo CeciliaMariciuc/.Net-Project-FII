@@ -1,0 +1,127 @@
+﻿@page "/recommendation"
+@inject HttpClient Http
+@using Blazored.LocalStorage
+@inject ILocalStorageService localStore
+@using System.Net.Http.Headers
+@using System.Net.Http.Formatting
+@using Models.Ratings
+@using Models
+@using Models.Recommendations
+<h3>Recommendation</h3>
+<div>
+    These are our recommendations base on your movie preferences.
+    Keep watching and rating movies to help improving our predictions!
+</div>
+<form>
+    <input type="button" @onclick="@GetTopUserRecommendation" value="Make predictions based on my preferences" disabled="@isLoading" />
+</form>
+@if (top10_user_predictions.Any())
+{
+    <div class="predictions-response">
+        @foreach (var prediction in top10_user_predictions)
+        {
+            <h5 class="movie-title">@prediction.Title</h5>
+            <p class="movie-info">
+                @prediction.Genres
+            </p>
+        }
+    </div>
+}
+<div>
+    Here you can find the highest rated movies we have on our website! 
+    We continue to update our database so check it out again later!
+</div>
+<form>
+    <input type="button" @onclick="@GetTopRatedMovies" value="See Top 10 Movies By Rating" disabled="@isLoading" />
+</form>
+
+@if (top10_rating_predictions.Any())
+{
+    <div class="rating-response">
+        @foreach (var movie in top10_rating_predictions)
+        {
+            <h5 class="movie-title">@movie.Title</h5>
+            <p class="movie-info">
+                @movie.Description
+            </p>
+        }
+    </div>
+}
+
+<div>
+    Below we have the most popular movies according to our users ratings. 
+    Click the button to see the list!
+</div>
+<form>
+    <input type="button" @onclick="@GetTopPopularMovies" value="See Top 10 Movies By Popularity" disabled="@isLoading" />
+</form>
+
+@if (top10_popular_predictions.Any())
+{
+    <div class="rating-response">
+        @foreach (var movie in top10_popular_predictions)
+        {
+            <h5 class="movie-title">@movie.Title</h5>
+            <p class="movie-info">
+                @movie.Description
+            </p>
+        }
+    </div>
+}
+
+@code {
+    private int user;
+    private bool isLoading;
+    List<MoviePrediction> top10_user_predictions = new List<MoviePrediction>();
+    List<Movie> top10_rating_predictions = new List<Movie>();
+    List<Movie> top10_popular_predictions = new List<Movie>();
+
+    protected override async Task OnInitializedAsync() => await GetMostSimilarUser();
+
+    private async Task GetMostSimilarUser()
+    {
+        isLoading = true;
+        List<UserImdbRating> _ratings = new List<UserImdbRating>();
+        List<GeneralRating> mapped_ratings = new List<GeneralRating>();
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        _ratings = await Http.GetFromJsonAsync<List<UserImdbRating>>("https://localhost:44385/rating/user-mapped/" + userId);
+
+        var response_mapping = await Http.PostAsJsonAsync("https://localhost:44385/movieprediction/map-movies", _ratings);
+
+        mapped_ratings = await response_mapping.Content.ReadAsAsync<List<GeneralRating>>();
+
+        var response_getuser = await Http.PostAsJsonAsync("https://localhost:44385/movieprediction/similar-user", mapped_ratings);
+        user = await response_getuser.Content.ReadAsAsync<int>();
+        isLoading = false;
+    }
+
+    private async Task GetTopUserRecommendation()
+    {
+        MovieData movieData = new MovieData
+        {
+            UserId = user
+        };
+
+        string token = await localStore.GetItemAsync<string>("token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var response_prediction = await Http.PostAsJsonAsync("https://localhost:44385/movieprediction", movieData);
+        top10_user_predictions = await response_prediction.Content.ReadAsAsync<List<MoviePrediction>>();
+    }
+
+
+    private async Task GetTopRatedMovies()
+    {
+        top10_rating_predictions = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies/top10");
+    }
+
+    private async Task GetTopPopularMovies()
+    {
+        List<string> top10_ids = await Http.GetFromJsonAsync<List<string>>("https://localhost:44385/rating/top10-popular");
+        var response_top10 = await Http.PostAsJsonAsync("https://localhost:44385/movies/ids", top10_ids);
+        top10_popular_predictions = await response_top10.Content.ReadAsAsync<List<Movie>>();
+    }
+}
+}

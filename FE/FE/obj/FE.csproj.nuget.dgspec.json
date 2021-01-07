@@ -45,6 +45,10 @@
               "target": "Package",
               "version": "[1.3.3, )"
             },
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Blazorise": {
               "target": "Package",
               "version": "[0.9.2.4, )"
@@ -74,6 +78,10 @@
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[3.2.0, )"
+            },
+            "WinInsider.System.Net.Http.Formatting": {
+              "target": "Package",
+              "version": "[1.0.14, )"
             }
           },
           "imports": [

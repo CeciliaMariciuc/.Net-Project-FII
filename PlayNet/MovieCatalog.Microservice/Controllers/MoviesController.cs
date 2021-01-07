@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieCatalog.Microservice.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
     {
@@ -37,10 +37,12 @@ namespace MovieCatalog.Microservice.Controllers
         [HttpGet("query")]
         public async Task<IEnumerable<Movie>> GetFiltered(
             [FromQuery] string title, 
-            [FromQuery] string genre
+            [FromQuery] string genre,
+            [FromQuery] string sort,
+            [FromQuery] int sort_order
             )
         {
-            return await _repository.GetFiltered(title,genre);
+            return await _repository.GetFiltered(title,genre,sort,sort_order);
         }
 
         [HttpPost]

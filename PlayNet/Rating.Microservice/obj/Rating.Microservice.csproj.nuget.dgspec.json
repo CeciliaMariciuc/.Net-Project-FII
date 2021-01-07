@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Teodora\\Downloads\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {}
+    "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Teodora\\Downloads\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {
+    "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Teodora\\Downloads\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
+        "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
         "projectName": "Rating.Microservice",
-        "projectPath": "C:\\Users\\Teodora\\Downloads\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
+        "projectPath": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Rating.Microservice\\Rating.Microservice.csproj",
         "packagesPath": "C:\\Users\\Teodora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Teodora\\Downloads\\PlayNet\\Rating.Microservice\\obj\\",
+        "outputPath": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Rating.Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,6 +44,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.12.0-beta1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [

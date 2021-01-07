@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\F6fLX746Jg4MRmm_zMcxArK3_n_iN8Q4qKV4nKyu6Qw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\IeQwyG9XtPTzouc1J3yFDRjFoAvirzEdZ1SVD6iClXY=.hash",
       "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\FE.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/FE.dll.br"
     },
@@ -206,81 +206,6 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/BlazorComponentUtilities.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\6VsY3L_zj1__Ina3aVb4Fb8oeGsDuu9NpRGzTuaHqT0=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Syncfusion.Blazor.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Syncfusion.Blazor.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\NL725_71hR_KhtI4Tpu6M9FSFcl5dJo8uv8KUjuzxYI=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Syncfusion.Licensing.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Syncfusion.Licensing.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\wDPt-zh9xGop_Vp7dKTGGcT9bZIAatqQ-eQLhtASLgw=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Text.Encoding.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encoding.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\fFIyhWRt3TsR3191q2WtKgMNr3s-jNNnO4P5rrUojjA=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Reflection.Extensions.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Reflection.Extensions.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\egPOud7Mcxx-20iAZiekEmazNYxAwi8HO1Z5_a4Ikww=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Linq.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Linq.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\1FBfAreOfbXDp0WA294BCrk0EIa5ZqlghOuvDlqFtk8=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Runtime.Extensions.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.Extensions.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\YsVP1MH7elMIe4iUnDj_hJHfSvMWW8X4hzNlc2bvJ4k=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Text.RegularExpressions.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.RegularExpressions.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\zWDzFtXZzC_KLMGVRm7c4nLj3X7VnzT9SMdxCVqb3dE=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Collections.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Collections.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\8Q_uKcqkDjFjcXfcYU073dQlKb5IRta-UHFtV3Tjz9s=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Reflection.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Reflection.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\U4q43ZeuBEBaCygKJwr18fjDYwnFv22MHuvMVqnpNzI=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Resources.ResourceManager.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Resources.ResourceManager.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\6CpyRQAYrVPJfNYBKH0K9lWX_rNPO15lwNhGHPmvxtk=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Runtime.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\ubyINHXDmWOAugBDEb8CCz_uV68eordXiYDxpUeRBvg=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.CSharp.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.CSharp.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\qHs7XPeKfSFL25fnxPHPCL-hFmU4WNPRZUFVRYTfsNE=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Syncfusion.ExcelExport.Net.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Syncfusion.ExcelExport.Net.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\rIhc5FqZMKZVlB4SIZEgRg8HfXlSKRcetJk3ZVOr-Ys=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Syncfusion.PdfExport.Net.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Syncfusion.PdfExport.Net.dll.br"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\mRd6TL4DYldo1ko9czkjEDcoiPdMPrJxz3dekwV6OOY=.hash",
-      "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Newtonsoft.Json.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Newtonsoft.Json.dll.br"
-    },
-    {
       "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\FJ_rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=.hash",
       "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Components.WebAssembly.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.br"
@@ -346,7 +271,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\DbW8WdqKsL5QT9L1plHg8dIwDNOjkwTK2gMQ4HBZydw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\5kwEgxOd_qnn-rgg-GPRCxn7Q4VHDuZ73zZoBgUhG8Y=.hash",
       "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\FE.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/FE.pdb.br"
     },
@@ -371,7 +296,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\FLIQgKQIznDAgbDuyjJCr6CKIwbRfzDX7Gp2ala7PoE=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\4taSIHrCn5z3SFSE8Rqx6Nb6QeCxA7r4-gMJXaXTLo0=.hash",
       "Source": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
     }

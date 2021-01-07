@@ -29,6 +29,11 @@ namespace MovieCatalog.Microservice
 
             services.AddTransient<IMovieRepository, MovieRepository>();
             services.AddControllers();
+            services.AddSwaggerGen();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +42,12 @@ namespace MovieCatalog.Microservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Catalog API V1");
+                });
             }
 
             app.UseHttpsRedirection();
@@ -49,6 +60,8 @@ namespace MovieCatalog.Microservice
             {
                 endpoints.MapControllers();
             });
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod()
+                .AllowAnyHeader());
         }
     }
 }

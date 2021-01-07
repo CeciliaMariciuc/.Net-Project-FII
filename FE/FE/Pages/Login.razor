@@ -1,10 +1,11 @@
 ﻿@page "/login"
 @inject HttpClient Http
 @using Models
-
+@using Blazored.LocalStorage
+@inject Blazored.LocalStorage.ILocalStorageService localStore
 <link rel="stylesheet" type="text/css" href="../css/login.css">
 
-<section class="login-block">
+<!--section class="login-block">
     <div class="container">
         <div class="row">
             <div class="col-md-4 login-sec">
@@ -48,7 +49,7 @@
         </div>
 
     </div>
-</section>
+</!-section>
 @if (loginResponse != null)
 {
     <div class="login-response">
@@ -60,7 +61,7 @@ else @if (loginFailed == true)
 <div class="login-response">
     Please enter a correct username/email and password. Note that the password field is case-sensitive.
 </div>
-}
+}-->
 
 
 @code {
@@ -71,6 +72,25 @@ else @if (loginFailed == true)
     bool isSubmitting;
     private bool loginFailed = false;
 
+    private async Task Login1User()
+    {
+        isSubmitting = true;
+        var loginUser = new User { Email = email, Password = password };
+        var response = await Http.PostAsJsonAsync("https://localhost:44385/users/login", loginUser);
+
+        if (response.IsSuccessStatusCode)
+        {
+            loginResponse = await response.Content.ReadFromJsonAsync<LoggedUser>();
+            Console.WriteLine(loginResponse);
+        }
+        else
+        {
+            loginFailed = true;
+            loginResponse = null;
+        }
+        isSubmitting = false;
+    }
+
     private async Task LoginUser()
     {
         isSubmitting = true;
@@ -80,6 +100,9 @@ else @if (loginFailed == true)
         if (response.IsSuccessStatusCode)
         {
             loginResponse = await response.Content.ReadFromJsonAsync<LoggedUser>();
+            await localStore.SetItemAsync("token", loginResponse.Token);
+            await localStore.SetItemAsync("userId", loginResponse.UserId);
+            await localStore.SetItemAsync("email", loginResponse.Email);
             Console.WriteLine(loginResponse);
         }
         else

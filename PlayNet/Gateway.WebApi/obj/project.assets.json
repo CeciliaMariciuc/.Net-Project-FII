@@ -496,11 +496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
       "projectName": "Gateway.WebApi",
-      "projectPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
+      "projectPath": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Gateway.WebApi\\Gateway.WebApi.csproj",
       "packagesPath": "C:\\Users\\Teodora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\PlayNet\\Gateway.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Teodora\\Desktop\\PlayNetGood\\PlayNet\\Gateway.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

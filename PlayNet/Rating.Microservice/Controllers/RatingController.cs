@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rating.Microservice.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
 
     public class RatingController : ControllerBase
@@ -19,7 +19,7 @@ namespace Rating.Microservice.Controllers
         }
 
         [HttpGet("movie/{movieId}")]
-        public async Task<IEnumerable<RatingEntry>> GetByMovieId(int movieId)
+        public async Task<IEnumerable<RatingEntry>> GetByMovieId(string movieId)
             {
             return await _repository.GetByMovieId(movieId);
         }
@@ -31,11 +31,17 @@ namespace Rating.Microservice.Controllers
 
 
         [HttpGet("user/{userId}")]
-        public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(int userId)
+        public async Task<IEnumerable<RatingEntry>> GetRatingsGivenByUser(string userId)
         {
             return await _repository.GetRatingsGivenByUser(userId);
-            
-            
+             
+        }
+
+        [HttpGet("user-mapped/{userId}")]
+        public async Task<IEnumerable<PredictionMappedRating>> GetRatingsGivenByUserMapped(string userId)
+        {
+            return await _repository.GetRatingsGivenByUserMap(userId);
+
         }
 
         [HttpPost]
