@@ -1,11 +1,14 @@
 ﻿@page "/rating"
 @inject HttpClient Http
+@using System.Net.Http.Headers
 @*@using Syncfusion.Blazor.DropDowns*@
+@using Blazored.LocalStorage
+@inject ILocalStorageService localStore
 @using Models
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/rating.css">
+    <link rel="stylesheet" type="text/css" href="../css/rating1.css">
     <h1>Rating</h1>
 </head>
 <body>
@@ -57,16 +60,73 @@
 
                 </div>
             </div>
+            @if (_ratings.Any())
+            {
+                <div class="rating-list">
+                    @foreach (var rating in _ratings)
+                    {
+                        <div class="rating-el">
+                            <div class="card-body">
+                                <h5 class="movie-title">@rating.MovieTitle</h5>
+                                <p class="rating-info">
+                                    <strong>Your Rating: </strong> @rating.Rated
+                                </p>
+                                <button>Go to movie page</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            else if (isLoaded == true)
+            {
+                <p>No Ratings Found</p>
+            }
         </div>
     </section>
 </body>
 </html>
 
-@code
-    {
+@code {
+
     private List<Movie> movies = new List<Movie>();
-    protected override async Task OnInitializedAsync() => await GetMovies();
 
-    private async Task GetMovies() => movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44301/movies");
+    private async Task GetMovies() => movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies");
+
+    List<RatingEntry> _ratings = new List<RatingEntry>();
+    private bool isLoaded;
+    private Movie chosenMovie;
+    private int chosenRating;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetMovies();
+        await GetUserRatings();
+    }
+    private async Task InsertRating()
+    {
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        RatingEntry ratingEntry = new RatingEntry
+        {
+            UserId = userId,
+            MovieId = chosenMovie.Id,
+            Rated = chosenRating,
+            MovieTitle = chosenMovie.Title,
+            Votes = chosenMovie.Votes
+        };
+        var response = await Http.PostAsJsonAsync("https://localhost:44385/users/login", ratingEntry);
+    }
+    private async Task GetUserRatings()
+    {
+        isLoaded = false;
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        _ratings = await Http.GetFromJsonAsync<List<RatingEntry>>("https://localhost:44385/rating/user/" + userId);
+        isLoaded = true;
+    }
 }
-

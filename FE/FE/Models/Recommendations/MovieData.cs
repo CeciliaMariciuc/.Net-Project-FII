@@ -1,5 +1,5 @@
 ﻿
-namespace PlayNetFront.Models.Recommendations
+namespace FE.Models.Recommendations
 {
     public class MovieData
     {
@@ -8,5 +8,6 @@ namespace PlayNetFront.Models.Recommendations
         public float MovieId { get; set; }
 
         public float Rating { get; set; }
+        
     }
 }

@@ -1,0 +1,130 @@
+﻿﻿@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 4000px;
+    font-family: 'Lato';
+    font-size: 23px;
+}
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #6495ed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 9vh;
+    letter-spacing: 1px;
+    font-size: 34px;
+}
+.title h1 {
+    background-image: url(https://media.giphy.com/media/LPBhHit55Xxx03lllW/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: .75;
+    margin: 10px 0;
+}
+
+
+.banner {
+    position: inherit;
+    bottom: 20px;
+    padding-left: 20px;
+    color: darkblue;
+    margin-top:20px;
+}
+
+
+
+
+
+
+.movie-card {
+    margin-top: 4%;
+    width: 100px;
+    display: inline-block;
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 440px;
+    background: #6495ed;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    overflow: hidden;
+    position: relative;
+    margin-left:8%;
+}
+
+    .movie-card img {
+        width: 100%;
+        height: 100%;
+        transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    }
+
+.card-body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255,.7);
+    width: 100%;
+    height: 100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+
+.movie-card:hover .card-body {
+    left: 0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+
+.movie-card:hover {
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    transform: scale(.97);
+}
+
+    .movie-card:hover img {
+        transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+        transform: scale(1.6) rotate(20deg);
+        filter: blur(3px);
+    }
+
+.movie-card h5 {
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+    display:flex;
+}
+
+.movie-card p {
+    line-height: 24px;
+    height: 70%;
+}
+
+input, select {
+    margin: 10px;
+    border: none;
+    background: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 20px;
+    width: audo;
+    height: 50px;
+    color: white
+}
+

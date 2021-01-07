@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\FE.csproj": {}
+    "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\FE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\FE.csproj": {
+    "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\FE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\FE.csproj",
+        "projectUniqueName": "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\FE.csproj",
         "projectName": "FE",
-        "projectPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\FE.csproj",
+        "projectPath": "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\FE.csproj",
         "packagesPath": "C:\\Users\\Teodora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Teodora\\Desktop\\poiect net\\.Net-Project-FII\\FE\\FE\\obj\\",
+        "outputPath": "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

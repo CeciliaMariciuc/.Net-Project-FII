@@ -3,16 +3,27 @@
 @using Models
 
 
-<link rel="stylesheet" type="text/css" href="../css/moviecatalog.css">
+<link rel="stylesheet" type="text/css" href="../css/moviecatalog1.css">
 <div class="text-center">
 
-
+    <div class='title'>
+        <br />
+        <h1>
+            Movie Catalog
+            <br />
+        </h1>
+    </div>
     <hr />
-    <form @onsubmit="GetFilteredMovies">
+    <br />
+    <br />
+    <br />
+    
+
+    <form>
         <div class="filter">
             <label>
-                Title:
-                <input type="search" @bind="searchTitle" placeholder="Movie Title" />
+                Movie Title:
+                <input type="search" @bind="searchTitle" />
             </label>
             <label>
                 Genre:
@@ -40,7 +51,7 @@
             </label>
             <label>
                 Sort by:
-                <select id="sort" @bind="sort">
+                <select id="sort" @bind="sort" placeholder="Choose the genre">
                     <option value="Title">Movie Title</option>
                     <option value="Rating">User Rating</option>
                 </select>
@@ -51,50 +62,54 @@
                     <option value="1">Ascending</option>
                     <option value="-1">Descending</option>
                 </select>
-               
-            </label>
-                <button type="submit">Search</button>
-            
-        </div>
-            <div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </div>
 
-            @if (_movies.Any())
-            {
-                <div class="movie-list">
-                    @foreach (var movie in _movies)
-                    {
-                        <div class="movie-card" style="width: 18rem;">
-                            <img class="card-img-top" src="https://i.redd.it/gnv94oll6im01.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="movie-title">@movie.Title</h5>
-                                <p class="movie-info">
-                                    <strong>Rating: </strong> @movie.Rating
-                                    <strong>Year: </strong> @movie.Year
-                                    <strong>Description: </strong> @movie.Description
-                                </p>
-                            </div>
+            </label>
+            <input type="button" @onclick="@GetFilteredMovies" value="Search" class="button-search" />
+
+
+        </div>
+        <div class="banner">
+            <p>Here you can see all our movies, or you can search for your favorite movie. Enojoy! </p>
+        </div>
+        <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+
+        @if (_movies.Any())
+        {
+            <div class="movie-list">
+                @foreach (var movie in _movies)
+                {
+                    <div class="movie-card" style="width: 18rem;">
+                        <img class="card-img-top" src="@movie.Poster" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="movie-title">@movie.Title</h5>
+                            <p class="movie-info">
+                                <strong>Rating: </strong> @movie.Rating
+                                <strong>Year: </strong> @movie.Year
+                                <strong>Description: </strong> @movie.Description
+                            </p>
                         </div>
-                    }
-                </div>
-            }
-            else if (isLoaded == true)
-            {
-                <p>No Movies Found</p>
-            }
-</form>
+                    </div>
+                }
+            </div>
+        }
+        else if (isLoaded == true)
+        {
+            <p>No Movies Found</p>
+        }
+    </form>
     @code {
 
         private List<Movie> _movies = new List<Movie>();

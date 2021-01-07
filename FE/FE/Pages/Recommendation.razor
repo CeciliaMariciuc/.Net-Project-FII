@@ -4,32 +4,53 @@
 @inject ILocalStorageService localStore
 @using System.Net.Http.Headers
 @using System.Net.Http.Formatting
-@using Models.Ratings
 @using Models
 @using Models.Recommendations
-<h3>Recommendation</h3>
-<div>
-    These are our recommendations base on your movie preferences.
-    Keep watching and rating movies to help improving our predictions!
+<link rel="stylesheet" type="text/css" href="../css/recommendation.css">
+<div class='title'>
+    <br />
+    <h1>
+        Recommendation
+        <br />
+    </h1>
+</div>
+<hr />
+<br />
+<br />
+<br />
+<div class="banner">
+    <p>
+        These are our recommendations base on your movie preferences.<br />
+        Keep watching and rating movies to help improving our predictions!
+    </p>
 </div>
 <form>
-    <input type="button" @onclick="@GetTopUserRecommendation" value="Make predictions based on my preferences" disabled="@isLoading" />
+    <input type="button" @onclick="@GetTopUserRecommendation" value="Make predictions based on my preferences" disabled="@isLoading">
 </form>
 @if (top10_user_predictions.Any())
 {
     <div class="predictions-response">
         @foreach (var prediction in top10_user_predictions)
-        {
-            <h5 class="movie-title">@prediction.Title</h5>
-            <p class="movie-info">
-                @prediction.Genres
-            </p>
+        {<div class="movie-card" style="width: 18rem;">
+                <img class="card-img-top" src="https://s.studiobinder.com/wp-content/uploads/2017/12/Movie-Poster-Template-Dark-with-Image.jpg?x81279" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="movie-title">@prediction.Title</h5>
+                    <br />
+                    <br />
+                    <p class="movie-info">
+                        @prediction.Genres
+
+                    </p>
+                </div>
+            </div>
         }
     </div>
 }
-<div>
-    Here you can find the highest rated movies we have on our website! 
-    We continue to update our database so check it out again later!
+<div class="banner">
+    <p>
+        Here you can find the highest rated movies we have on our website!<br />
+        We continue to update our database so check it out again later!
+    </p>
 </div>
 <form>
     <input type="button" @onclick="@GetTopRatedMovies" value="See Top 10 Movies By Rating" disabled="@isLoading" />
@@ -37,20 +58,28 @@
 
 @if (top10_rating_predictions.Any())
 {
-    <div class="rating-response">
+    <div class="predictions-response">
         @foreach (var movie in top10_rating_predictions)
-        {
-            <h5 class="movie-title">@movie.Title</h5>
-            <p class="movie-info">
-                @movie.Description
-            </p>
+        {<div class="movie-card" style="width: 18rem;">
+                <img class="card-img-top" src="@movie.Poster" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="movie-title">@movie.Title</h5>
+                    <br />
+                    <br />
+                    <p class="movie-info">
+                        @movie.Description
+                    </p>
+                </div>
+            </div>
         }
     </div>
 }
 
-<div>
-    Below we have the most popular movies according to our users ratings. 
-    Click the button to see the list!
+<div class="banner">
+    <p>
+        Below we have the most popular movies according to our users ratings.<br />
+        Click the button to see the list!
+    </p>
 </div>
 <form>
     <input type="button" @onclick="@GetTopPopularMovies" value="See Top 10 Movies By Popularity" disabled="@isLoading" />
@@ -61,30 +90,56 @@
     <div class="rating-response">
         @foreach (var movie in top10_popular_predictions)
         {
-            <h5 class="movie-title">@movie.Title</h5>
-            <p class="movie-info">
-                @movie.Description
-            </p>
+            <div class="movie-card" style="width: 18rem;">
+                <img class="card-img-top" src="@movie.Poster" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="movie-title">@movie.Title</h5>
+                    <br />
+                    <br />
+                    <p class="movie-info">
+                        @movie.Description
+                    </p>
+                </div>
+            </div>
         }
     </div>
 }
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 @code {
     private int user;
     private bool isLoading;
-    List<MoviePrediction> top10_user_predictions = new List<MoviePrediction>();
-    List<Movie> top10_rating_predictions = new List<Movie>();
-    List<Movie> top10_popular_predictions = new List<Movie>();
+    List<MoviePrediction>
+    top10_user_predictions = new List<MoviePrediction>
+        ();
+    List<Movie>
+        top10_rating_predictions = new List<Movie>
+            ();
+    List<Movie>
+        top10_popular_predictions = new List<Movie>
+            ();
 
     protected override async Task OnInitializedAsync() => await GetMostSimilarUser();
 
     private async Task GetMostSimilarUser()
     {
         isLoading = true;
-        List<UserImdbRating> _ratings = new List<UserImdbRating>();
-        List<GeneralRating> mapped_ratings = new List<GeneralRating>();
-        string userId = await localStore.GetItemAsync<string>("userId");
-        string token = await localStore.GetItemAsync<string>("token");
+        List<UserImdbRating>
+            _ratings = new List<UserImdbRating>
+                ();
+        List<GeneralRating>
+            mapped_ratings = new List<GeneralRating>
+                ();
+        string userId = await localStore.GetItemAsync<string>
+            ("userId");
+        string token = await localStore.GetItemAsync<string>
+            ("token");
 
         Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         _ratings = await Http.GetFromJsonAsync<List<UserImdbRating>>("https://localhost:44385/rating/user-mapped/" + userId);
@@ -124,4 +179,4 @@
         top10_popular_predictions = await response_top10.Content.ReadAsAsync<List<Movie>>();
     }
 }
-}
+
