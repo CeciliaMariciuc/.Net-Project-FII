@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zhEsjSWqWJZSje/8Fxcwd2OkURbMAVvA9+eNudKZT3wXnfaoiMyPZmlkjF8S+kS9C1F/ETS5BZ6QbXrJbrKMMA==",
+  "dgSpecHash": "gcR1jqDxkzwjOwZR2H3Tnqu+EFNyVfXd7uCjdTXqhR+oNWxpgu/nyH78ueRx1r32aCnew7PB1QZNx5JotrG46w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Teodora\\Desktop\\PlayNet\\FE\\FE\\FE.csproj",
+  "projectFilePath": "C:\\Users\\Teodora\\Desktop\\.Net-Project-FII\\FE\\FE\\FE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Teodora\\.nuget\\packages\\blazorcomponentutilities\\1.6.0\\blazorcomponentutilities.1.6.0.nupkg.sha512",
     "C:\\Users\\Teodora\\.nuget\\packages\\blazored.localstorage\\3.0.0\\blazored.localstorage.3.0.0.nupkg.sha512",

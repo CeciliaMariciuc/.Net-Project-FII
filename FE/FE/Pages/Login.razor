@@ -1,9 +1,10 @@
-﻿@page "/login"
+﻿@inject NavigationManager NavigationManager
+@page "/login"
 @inject HttpClient Http
 @using Models
 @using Blazored.LocalStorage
 @inject Blazored.LocalStorage.ILocalStorageService localStore
-<link rel="stylesheet" type="text/css" href="../css/login1.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 
 <section class="login-block">
     <div class="container">
@@ -12,11 +13,11 @@
                 <h2 class="text-center">Login Now</h2>
                 <form class="login-form">
                     <div class="form-group">
-                        <label for="exampleInputEmail" class="text-uppercase">Email</label>
+                        <label for="exampleInputEmail" class="text-uppercase"></label>
                         <input @bind="email" type="text" id="email" class="form-control" placeholder="E-mail">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword" class="text-uppercase">Password</label>
+                        <label for="exampleInputPassword" class="text-uppercase"></label>
                         <input @bind="password" type="password" id="password" class="form-control" placeholder="password">
                     </div>
 
@@ -26,22 +27,18 @@
                             <small>Remember me</small>
                         </label>
 
-                        <input @onclick="@LoginUser" type="submit" class="btn btn-login float-right" value="Login" disabled=@isSubmitting>
                     </div>
                 </form>
+                <input @onclick="@LoginUser" type="submit" class="btn btn-login float-right" value="Login" disabled=@isSubmitting>
+                <button @onclick="NavigateToResetPassword">Forgot your password?</button>
             </div>
 
             <div class="col-md-8 banner-sec">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://i.ibb.co/qRPSB9x/movie.jpg" alt="First slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <div class="banner-text">
-                                    <h2>Welcome to PLAYNET!</h2>
-                                    <p>Login to see more features and have a great movie experince! You don't have an account yet? Don't miss out and go to our <a href="/register">register</a> page. </p>
-                                </div>
-                            </div>
+                            <img class="d-block img-fluid" src="https://www.verdict.co.uk/wp-content/uploads/2019/02/shutterstock_29766112.jpg" alt="First slide">
+
                         </div>
                     </div>
                 </div>
@@ -64,13 +61,17 @@ else @if (loginFailed == true)
 }
 
 
-@code {
-    private string email;
+@code { private string email;
     private string password;
     private LoggedUser loginResponse = null;
 
     bool isSubmitting;
     private bool loginFailed = false;
+
+    private void NavigateToResetPassword()
+    {
+        NavigationManager.NavigateTo("reset-password");
+    }
 
     private async Task LoginUser()
     {
@@ -92,7 +93,5 @@ else @if (loginFailed == true)
             loginResponse = null;
         }
         isSubmitting = false;
-    }
-}
-
-
+        NavigationManager.NavigateTo("movies", true);
+    } }

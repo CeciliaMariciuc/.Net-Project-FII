@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "FE.dll": "sha256-yWV4NFS6mj26cNLeeU6zuAqQpbNUi0SGGV+1PqS3YTc=",
+      "FE.dll": "sha256-TY142n9aN3p6F0Bs9l1+ZdmwN915w\/MtJvUuJdjEzlA=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -36,6 +36,7 @@
       "System.Threading.Tasks.Extensions.dll": "sha256-TkH6yxFQlTfY8NfznePrCdYJiEVpM9Dqy4Uu4H9qk10=",
       "System.Numerics.Vectors.dll": "sha256-qAKfFnquY+7UC\/MzLi04rjqEhLzTryCoLg\/S6MxI19I=",
       "System.Text.Encodings.Web.dll": "sha256-Tqh1Da+iTRQJEZUGAsMNFuZ4hf1PMf13WApRZod+uw4=",
+      "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "System.Net.Http.Formatting.dll": "sha256-MbTvdBOtfr7FUEHatt3bR84IYHOcpqabfBXoEcupunU=",
       "System.Xml.XDocument.dll": "sha256-rHD3sezK+6cfOkyVhvtSBCALBQVXDeV\/bRvYAMuaJ4M=",
       "System.Text.Encoding.Extensions.dll": "sha256-z8iFDTIYfU\/3d7Ovx4YrLVKTe9yU9vK9m4VWuqBMIqw=",
@@ -60,7 +61,6 @@
       "System.Diagnostics.Debug.dll": "sha256-tFMMNru1KjM9tY0dph3potA\/qlmOtgZOwHLp+imUF7Y=",
       "System.Threading.Tasks.dll": "sha256-dqzLPW8oFg5YVC2+79UXgMTdvPsrnepDLYkV0Ipnmbo=",
       "System.Runtime.dll": "sha256-6CpyRQAYrVPJfNYBKH0K9lWX+rNPO15lwNhGHPmvxtk=",
-      "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "BlazorStrap.dll": "sha256-xdRi3a3cx0JVP9J2qnH0eXohW1WGyOmfftIX56IJIQI=",
       "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-O+AClmxYmKcKCv\/PvQk4tx2T7TlTwypImRCpMNwiwms=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-FuzsEzH9sQ12Pdrqqk5WbdB+Fzy18MOe1W7UT3PW+0c=",
@@ -87,7 +87,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "FE.pdb": "sha256-kP1rue0TiLYTswr9L9iCyK5MbJXtWVD0p9rIj+lbJ8g="
+      "FE.pdb": "sha256-N91OvcphfhcM7riZpXC8HcI3vc4whX1Ay\/Jg64Qbnzo="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",

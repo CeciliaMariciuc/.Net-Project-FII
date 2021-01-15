@@ -1,0 +1,194 @@
+﻿@page "/ratings"
+@inject HttpClient Http
+@using Blazored.LocalStorage
+@inject ILocalStorageService localStore
+@using System.Net.Http.Headers
+
+@using Models
+@using Syncfusion.Blazor.DropDowns
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/rating2.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 rating-sec">
+                <h2 class="text-center">Rate one of the movies on our site.</h2>
+                <form class="rating-form">
+                    <div class="form-group">
+                        <label for="exampleInputMovieName" class="text-uppercase">Enter movie Name</label>
+                        <input @bind="chosenMovieTitle" type="text" id="name" class="form-control" placeholder="Movie name">
+                    </div>
+
+                    <div class="rate">
+                        <input @onclick="(() => SetChosenRating(10))" type="radio" id="star10" name="rate" value=10/>
+                        <label for="star10" title="text">10 stars</label>
+                        <input @onclick="(() => SetChosenRating(9))" type="radio" id="star9" name="rate" value=9 />
+                        <label for="star9" title="text">9 stars</label>
+                        <input @onclick="(() => SetChosenRating(8))" type="radio" id="star8" name="rate" value=8 />
+                        <label for="star8" title="text">8 stars</label>
+                        <input @onclick="(() => SetChosenRating(7))" type="radio" id="star7" name="rate" value=7 />
+                        <label for="star7" title="text">7 stars</label>
+                        <input @onclick="(() => SetChosenRating(6))"type="radio" id="star6" name="rate" value=6 />
+                        <label for="star6" title="text">6 star</label>
+                        <input @onclick="(() => SetChosenRating(5))" type="radio" id="star5" name="rate" value=5 />
+                        <label for="star5" title="text">5 stars</label>
+                        <input @onclick="(() => SetChosenRating(4))" type="radio" id="star4" name="rate" value=4 />
+                        <label for="star4" title="text">4 stars</label>
+                        <input @onclick="(() => SetChosenRating(3))" type="radio" id="star3" name="rate" value=3 />
+                        <label for="star3" title="text">3 stars</label>
+                        <input @onclick="(() => SetChosenRating(2))"type="radio" id="star2" name="rate" value=2 />
+                        <label for="star2" title="text">2 stars</label>
+                        <input @onclick="(() => SetChosenRating(1))" type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
+
+                    <div class="form-check">
+
+                        <input  @onclick="@InsertRating" type="submit" class="btn btn-rating float-right" disabled=@isSubmitting>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 banner-sec">
+                <img src="https://i.ibb.co/x2GnTWj/rating.jpg" alt="First slide">
+            </div>
+        </div>
+    </div>
+    <div>
+        @insertRequestMessage
+    </div>
+
+        @if (_ratings.Any())
+        {
+            <div class="rating-list">
+                @foreach (var rating in _ratings)
+                {
+                    <div class="rating-el">
+                        <div class="card-body">
+                            <h5 class="movie-title">@rating.MovieTitle</h5>
+                            <p class="rating-info">
+                                <strong>Your Rating: </strong> @rating.UserRating
+                            </p>
+                            <button @onclick="@(() => DeleteRating(rating))">Delete rating</button>
+                            <br />
+                            <select @bind="updateRating">
+                                <option value="10">10</option>
+                                <option value="9">9</option>
+                                <option value="8">8</option>
+                                <option value="7">7</option>
+                                <option value="7">7</option>
+                                <option value="6">6</option>
+                                <option value="5">5</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                            <button @onclick="(() => UpdateRating(rating))">Update rating</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        else if (isLoaded == true)
+        {
+            <p>No Ratings Found</p>
+        }
+
+</body>
+
+@code {
+
+    private List<Movie> movies = new List<Movie>();
+
+    private async Task GetMovies() => movies = await Http.GetFromJsonAsync<List<Movie>>("https://localhost:44385/movies");
+
+    List<RatingEntry> _ratings = new List<RatingEntry>();
+    private bool isLoaded;
+    private Movie chosenMovie;
+    private string chosenMovieTitle;
+    private int chosenRating;
+    private int updateRating = 0;
+    private string insertRequestMessage;
+
+    bool isSubmitting;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetMovies();
+        await GetUserRatings();
+    }
+
+    private void SetChosenRating(int rating)
+    {
+        chosenRating = rating;
+        Console.WriteLine(chosenRating);
+    }
+
+    private async Task InsertRating()
+    {
+        isSubmitting = true;
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        try
+        {
+            chosenMovie = await Http.GetFromJsonAsync<Movie>("https://localhost:44385/movies/title/" + chosenMovieTitle);
+            RatingEntry ratingEntry = new RatingEntry
+            {
+                UserId = userId,
+                MovieId = chosenMovie.Id,
+                UserRating = chosenRating,
+                Rated = chosenMovie.Rating,
+                MovieTitle = chosenMovie.Title,
+                Votes = chosenMovie.Votes
+            };
+            var response = await Http.PostAsJsonAsync("https://localhost:44385/rating", ratingEntry);
+            insertRequestMessage = "The rating was added to your list!";
+        }
+        catch(Exception ex)
+        {
+            insertRequestMessage = "This movie wasn't found in our database! Check on the 'Movies' page to see the title available on our website!";
+        }
+        await GetUserRatings();
+        isSubmitting = false;
+    }
+
+    private async Task DeleteRating(RatingEntry rating)
+    {
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        await Http.DeleteAsync("https://localhost:44385/rating/"+ rating.Id);
+        _ratings.Remove(rating);
+    }
+
+    private async Task UpdateRating(RatingEntry rating)
+    {
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        RatingEntry updatedRatingEntry = rating;
+        updatedRatingEntry.UserRating = updateRating;
+        var response = await Http.PutAsJsonAsync("https://localhost:44385/rating/" + rating.Id, updatedRatingEntry);
+        _ratings[_ratings.FindIndex(r => r.Equals(rating))] = updatedRatingEntry;
+    }
+
+    private async Task GetUserRatings()
+    {
+        isLoaded = false;
+        string userId = await localStore.GetItemAsync<string>("userId");
+        string token = await localStore.GetItemAsync<string>("token");
+
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        _ratings = await Http.GetFromJsonAsync<List<RatingEntry>>("https://localhost:44385/rating/user/" + userId);
+        isLoaded = true;
+    }
+
+}

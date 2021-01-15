@@ -1,6 +1,7 @@
-﻿rating-list{
-    color:darkblue;
+﻿rating-list {
+    color: darkblue;
 }
+
 .rating-block {
     background: #6495ed; /* fallback for old browsers */
     background: -webkit-linear-gradient( to bottom, #87ceeb, #6495ed ); /* Chrome 10-25, Safari 5.1-6 */
@@ -9,8 +10,9 @@
     width: 100%;
     padding: 50px 0;
 }
-.card-body{
-    color:darkblue;
+
+.card-body {
+    color: darkblue;
 }
 
 .banner-sec {
@@ -29,13 +31,14 @@ img {
 }
 
 
-.container{
+.container {
     position: relative;
     color: darkblue;
     background: #fff;
     border-radius: 10px;
     box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
 }
+
 }
 
 .rating-sec {

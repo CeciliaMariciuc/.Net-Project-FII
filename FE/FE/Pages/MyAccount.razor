@@ -1,0 +1,80 @@
+﻿@page "/my-account"
+@inject HttpClient Http
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@using Models
+@inject Blazored.LocalStorage.ILocalStorageService localStore
+@inject NavigationManager NavigationManager
+<link rel="stylesheet" type="text/css" href="../css/account.css">
+<div class="container">
+    <div class="left">
+        <div class="header">
+            <h2 class="animation a1">Manage your account</h2>
+            <h4 class="animation a2">Change your password account </h4>
+        </div>
+        <form>
+            <input @bind="newPassword" type="text" id="password" class="form-field animation a3" placeholder="New password">
+            <input @bind="newPassword2" type="password" id="password2" class="form-field animation a4" placeholder="Confirm new password">
+            <button @onclick="@ChangePassword" class="animation a5" disabled=@isSubmitting>Change Password</button>
+</form>
+        @if (isSubmitting == false)
+        {
+            <div class="email-response">
+                @responseMessage
+            </div>
+        }
+        <button @onclick="@Logout" class="animation a6">Logout</button>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+@code {
+
+    private string newPassword;
+    private string newPassword2;
+    private string responseMessage;
+    private bool isSubmitting;
+
+    private async Task Logout()
+    {
+        await localStore.RemoveItemAsync("userId");
+        await localStore.RemoveItemAsync("token");
+        await localStore.RemoveItemAsync("email");
+        NavigationManager.NavigateTo("login", true);
+    }
+
+    private async Task ChangePassword()
+    {
+        isSubmitting = true;
+        if (newPassword != newPassword2)
+        {
+            responseMessage = "The two passwords don't match, please try again!";
+        }
+        else
+        {
+            string userId = await localStore.GetItemAsync<string>("userId");
+            string token = await localStore.GetItemAsync<string>("token");
+            Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            ChangePassword changePassword = new ChangePassword
+            {
+                UserId = userId,
+                NewPassword = newPassword
+            };
+
+            var response = await Http.PutAsJsonAsync("https://localhost:44385/users/change-password/" + userId, changePassword);
+            if (response.IsSuccessStatusCode)
+            {
+                responseMessage = "Your password was updated! Don't forget to use your new password when you want to acces your account";
+            }
+            else
+            {
+                responseMessage = "There was a problem with your request! We could not change your password.";
+            }
+
+        }
+        isSubmitting = false;
+    }
+
+}

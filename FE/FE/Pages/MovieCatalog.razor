@@ -3,7 +3,7 @@
 @using Models
 
 
-<link rel="stylesheet" type="text/css" href="../css/moviecatalog1.css">
+<link rel="stylesheet" type="text/css" href="../css/moviecatalog3.css">
 <div class="text-center">
 
     <div class='title'>
@@ -13,21 +13,19 @@
             <br />
         </h1>
     </div>
-    <hr />
+   
     <br />
-    <br />
-    <br />
+    
     
 
     <form>
         <div class="filter">
             <label>
-                Movie Title:
-                <input type="search" @bind="searchTitle" />
+                <input type="search" @bind="searchTitle"  placeholder="Title" />
             </label>
             <label>
                 Genre:
-                <select id="genre" @bind="genre" placeholder="Choose the genre">
+                <select id="genre" @bind="genre" placeholder="Genre">
                     <option value="Family">Family</option>
                     <option value="Biography">Biography</option>
                     <option value="Sport">Sport</option>
@@ -50,14 +48,12 @@
                 </select>
             </label>
             <label>
-                Sort by:
-                <select id="sort" @bind="sort" placeholder="Choose the genre">
+                <select id="sort" @bind="sort" >
                     <option value="Title">Movie Title</option>
                     <option value="Rating">User Rating</option>
                 </select>
             </label>
             <label>
-                Sort Order:
                 <select id="sort_order" @bind="sort_order">
                     <option value="1">Ascending</option>
                     <option value="-1">Descending</option>

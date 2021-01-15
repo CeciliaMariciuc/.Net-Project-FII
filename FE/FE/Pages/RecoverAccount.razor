@@ -1,0 +1,64 @@
+﻿@page "/recover-account"
+@using System.Net.Http.Headers
+@using Models
+@inject HttpClient Http
+    <link rel="stylesheet" type="text/css" href="../css/recover.css">
+    <section class="recover-block">
+        <div class="container">
+            <h2>Recover Account</h2>
+            <form>
+                <div class="dates">
+
+                    <input @bind="email" type="text" id="email" placeholder="E-mail">
+                    <input @bind="password" type="password" id="password" placeholder="New password">
+                    <input @bind="token" type="text" id="token" placeholder="Token">
+                    <input @onclick="@ResetPass" type="submit" value="Reset Password" disabled=@isSubmitting class="btn-search">
+                    <div class="images">
+                        <img src="https://blog.ipswitch.com/hubfs/Depositphotos_160622706_s-2019.jpg" ,alt="image recover account" />
+                        <img src="https://blog.ipswitch.com/hubfs/Depositphotos_160622706_s-2019.jpg" ,alt="image recover account" />
+                        <img src="https://blog.ipswitch.com/hubfs/Depositphotos_160622706_s-2019.jpg" ,alt="image recover account" />
+                    </div>
+
+                </div>
+
+</form>
+
+            @if (isSubmitting == false)
+            {
+                <div class="email-response">
+                    @requestResponse
+                </div>
+            }
+            
+        </div>
+        
+    </section>
+    
+
+@code {
+    private string email;
+    private string password;
+    private string token;
+    private string requestResponse;
+
+    bool isSubmitting;
+
+    private async Task ResetPass()
+    {
+        isSubmitting = true;
+        var user = new User { Email = email, Password = password };
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        var response = await Http.PutAsJsonAsync("https://localhost:44385/users/reset-password", user);
+        if (response.IsSuccessStatusCode)
+        {
+            requestResponse = "Password updated! You can login with your new password.";
+        }
+        else
+        {
+            requestResponse = "The email you used was not found or your token has expired!";
+        }
+
+        isSubmitting = false;
+    }
+}
